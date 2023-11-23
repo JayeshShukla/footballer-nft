@@ -1,5 +1,5 @@
 import React from "react";
-import { mintNFT } from "../utility/contractConnection";
+import { firstNFT } from "../utility/cardMiddleware";
 
 export const PlayerCard = ({ item, i }) => {
   return (
@@ -20,10 +20,7 @@ export const PlayerCard = ({ item, i }) => {
         </div>
       </div>
       <div className="w-100">
-        <button
-          className="w-100"
-          onClick={() => mintNFT(item.objectID, item.price)}
-        >
+        <button className="w-100" onClick={() => firstNFT(item.objectID)}>
           Mint NFT({item.price})
         </button>
       </div>
