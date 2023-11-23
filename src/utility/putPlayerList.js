@@ -1,6 +1,10 @@
 import playersList from "../asset/players.json";
 const algoliasearch = require("algoliasearch");
-const client = algoliasearch("C3TC5SHPAJ", "971986c4cfb1b8780f0c99ceaef83495");
+
+const client = algoliasearch(
+  process.env.REACT_APP_ALGOLIA_APPLICATION_ID,
+  process.env.REACT_APP_ALGOLIA_API_KEY
+);
 const index = client.initIndex("Footballer-NFT");
 
 export const putPlayerList = async () => {
