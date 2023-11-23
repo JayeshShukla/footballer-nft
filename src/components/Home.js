@@ -28,7 +28,11 @@ const Home = ({ wallet, contract, setLoad }) => {
   return (
     <div>
       <Navbar />
-      {firstTimer ? <FirstTimer /> : <div>not first timer</div>}
+      {firstTimer ? (
+        <FirstTimer firstTimer={firstTimer} />
+      ) : (
+        <div>not first timer</div>
+      )}
     </div>
   );
 };
