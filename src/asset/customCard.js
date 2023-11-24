@@ -1,4 +1,5 @@
 export const generateGoldSvg = (
+  firstname,
   lastname,
   image,
   PAC,
@@ -17,7 +18,7 @@ export const generateGoldSvg = (
   <circle cx="100" cy="0" r="10" fill="white"/>
 <circle cx="50" cy="140" r="90" fill="#28282B"/>
 <image href="${image}" height="65" width="100" />
-<text x="50%" y="77%" class="base" dominant-baseline="middle" text-anchor="middle" font-size="9" font-family="Arial" fill="#D4AF37">${lastname}</text>
+<text x="50%" y="77%" class="base" dominant-baseline="middle" text-anchor="middle" font-size="9" font-family="Arial" fill="#D4AF37">${firstname} ${lastname}</text>
    <line x1="10" y1="85" x2="90" y2="85" stroke="white" stroke-width="0.1"/>
 <line x1="50" y1="90" x2="50" y2="120" stroke="white" stroke-width="0.1"/>
 <text x="15%" y="95%" class="base" dominant-baseline="middle" text-anchor="middle" font-size="5" font-family="Arial" fill="#D4AF37" font-weight="bolder">${PAC}</text>

@@ -6,7 +6,7 @@
     "country": "Portugal",
     "jerseyNo": "7",
     "image": "",
-    "price": "5 ETH"
+    "price": "3 ETH"
   },
   {
     "objectID": 2,
@@ -15,7 +15,7 @@
     "country": "Argentina",
     "jerseyNo": "10",
     "image": "https://ipfs.filebase.io/ipfs/Qmaa5ft5VqwFvZYwLHACGqHLurGb98ASYM9uTgfaSfgSgv",
-    "price": "5 ETH"
+    "price": "3 ETH"
   },
   {
     "objectID": 3,
@@ -24,7 +24,7 @@
     "country": "Brazil",
     "jerseyNo": "11",
     "image": "",
-    "price": "5 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 4,
@@ -33,16 +33,16 @@
     "country": "Egypt",
     "jerseyNo": "11",
     "image": "",
-    "price": "3 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 5,
     "firstname": "Kylian",
-    "lastname": "Mbappé",
+    "lastname": "Mbappe",
     "country": "France",
     "jerseyNo": "7",
     "image": "",
-    "price": "7 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 6,
@@ -51,7 +51,7 @@
     "country": "Poland",
     "jerseyNo": "9",
     "image": "",
-    "price": "5 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 7,
@@ -60,7 +60,7 @@
     "country": "Spain",
     "jerseyNo": "4",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 8,
@@ -69,12 +69,12 @@
     "country": "Belgium",
     "jerseyNo": "17",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 9,
     "firstname": "Luka",
-    "lastname": "Modrić",
+    "lastname": "Modric",
     "country": "Croatia",
     "jerseyNo": "10",
     "image": "",
@@ -87,7 +87,7 @@
     "country": "France",
     "jerseyNo": "7",
     "image": "",
-    "price": "2 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 11,
@@ -96,7 +96,7 @@
     "country": "England",
     "jerseyNo": "9",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 12,
@@ -105,7 +105,7 @@
     "country": "Norway",
     "jerseyNo": "9",
     "image": "",
-    "price": "7 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 13,
@@ -123,7 +123,7 @@
     "country": "England",
     "jerseyNo": "7",
     "image": "",
-    "price": "2 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 15,
@@ -132,7 +132,7 @@
     "country": "Netherlands",
     "jerseyNo": "4",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 16,
@@ -141,25 +141,25 @@
     "country": "France",
     "jerseyNo": "9",
     "image": "",
-    "price": "4 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 17,
     "firstname": "N'Golo",
-    "lastname": "Kanté",
+    "lastname": "Kante",
     "country": "France",
     "jerseyNo": "7",
     "image": "",
-    "price": "4 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 18,
     "firstname": "Sadio",
-    "lastname": "Mané",
+    "lastname": "Mane",
     "country": "Senegal",
     "jerseyNo": "10",
     "image": "",
-    "price": "3 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 19,
@@ -168,7 +168,7 @@
     "country": "Germany",
     "jerseyNo": "6",
     "image": "",
-    "price": "3 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 20,
@@ -177,7 +177,7 @@
     "country": "France",
     "jerseyNo": "6",
     "image": "",
-    "price": "2 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 21,
@@ -186,7 +186,7 @@
     "country": "Brazil",
     "jerseyNo": "6",
     "image": "",
-    "price": "2 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 22,
@@ -195,7 +195,7 @@
     "country": "Belgium",
     "jerseyNo": "7",
     "image": "",
-    "price": "1 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 23,
@@ -204,7 +204,7 @@
     "country": "Germany",
     "jerseyNo": "8",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 24,
@@ -213,7 +213,7 @@
     "country": "Belgium",
     "jerseyNo": "9",
     "image": "",
-    "price": "2 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 25,
@@ -231,7 +231,7 @@
     "country": "England",
     "jerseyNo": "25",
     "image": "",
-    "price": "2 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 27,
@@ -240,7 +240,7 @@
     "country": "England",
     "jerseyNo": "20",
     "image": "",
-    "price": "4 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 28,
@@ -249,7 +249,7 @@
     "country": "Austria",
     "jerseyNo": "27",
     "image": "",
-    "price": "2 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 29,
@@ -258,7 +258,7 @@
     "country": "Egypt",
     "jerseyNo": "25",
     "image": "",
-    "price": "2 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 30,
@@ -267,7 +267,7 @@
     "country": "Senegal",
     "jerseyNo": "26",
     "image": "",
-    "price": "2 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 31,
@@ -276,7 +276,7 @@
     "country": "Germany",
     "jerseyNo": "29",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 32,
@@ -284,7 +284,8 @@
     "lastname": "dos Santos",
     "country": "Brazil",
     "jerseyNo": "5",
-    "image": ""
+    "image": "",
+    "price": "2 ETH"
   },
   {
     "objectID": 33,
@@ -293,7 +294,7 @@
     "country": "Argentina",
     "jerseyNo": "11",
     "image": "",
-    "price": "4 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 34,
@@ -302,16 +303,16 @@
     "country": "Scotland",
     "jerseyNo": "26",
     "image": "",
-    "price": "3 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 35,
-    "firstname": "João",
+    "firstname": "Joao",
     "lastname": "Cancelo",
     "country": "Portugal",
     "jerseyNo": "27",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 36,
@@ -320,7 +321,7 @@
     "country": "Portugal",
     "jerseyNo": "3",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 37,
@@ -329,12 +330,12 @@
     "country": "United States",
     "jerseyNo": "22",
     "image": "",
-    "price": "3 ETH"
+    "price": "1 ETH"
   },
   {
     "objectID": 38,
     "firstname": "Thiago",
-    "lastname": "Alcântara",
+    "lastname": "Alcantara",
     "country": "Spain",
     "jerseyNo": "6",
     "image": "",
@@ -347,7 +348,7 @@
     "country": "Morocco",
     "jerseyNo": "22",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 40,
@@ -356,7 +357,7 @@
     "country": "England",
     "jerseyNo": "10",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 41,
@@ -374,7 +375,7 @@
     "country": "Brazil",
     "jerseyNo": "14",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 43,
@@ -388,11 +389,11 @@
   {
     "objectID": 44,
     "firstname": "Thomas",
-    "lastname": "Müller",
+    "lastname": "Muller",
     "country": "Germany",
     "jerseyNo": "25",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 45,
@@ -410,7 +411,7 @@
     "country": "Netherlands",
     "jerseyNo": "21",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 47,
@@ -424,7 +425,7 @@
   {
     "objectID": 48,
     "firstname": "Wojciech",
-    "lastname": "Szczęsny",
+    "lastname": "Szczesny",
     "country": "Poland",
     "jerseyNo": "1",
     "image": "",
@@ -437,7 +438,7 @@
     "country": "Italy",
     "jerseyNo": "50",
     "image": "",
-    "price": "3 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 50,
@@ -446,7 +447,7 @@
     "country": "Spain",
     "jerseyNo": "6",
     "image": "",
-    "price": "4 ETH"
+    "price": "2 ETH"
   },
   {
     "objectID": 51,
@@ -455,6 +456,6 @@
     "country": "Spain",
     "jerseyNo": "8",
     "image": "",
-    "price": "4 ETH"
+    "price": "2 ETH"
   }
 ]
