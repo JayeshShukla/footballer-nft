@@ -1,35 +1,31 @@
 import React, { useEffect, useState } from "react";
 import FirstTimer from "./FirstTimer";
 import { Navbar } from "./Navbar";
+import { getNFTCountPerAddress } from "../utility/contractAPI";
 
-const Home = ({ wallet, contract, setLoad }) => {
-  const [firstTimer, setFirstTimer] = useState(true);
+const Home = ({ wallet, contract, setLoader, publicAddress }) => {
+  const [firstTimer, setFirstTimer] = useState(null);
 
-  const checkUserNFTCount = async () => {
-    try {
-      if (wallet && contract) {
-        //change this
-        const nftCount = await contract.getUserDetails();
-        nftCount[0] ? setFirstTimer(false) : setFirstTimer(true);
-      }
-    } catch (error) {
-      console.log(error);
-      setFirstTimer(true);
-    } finally {
-      setLoad(false);
-    }
+  const getNFTCount = async () => {
+    const nftCount = await getNFTCountPerAddress(contract, publicAddress);
+    nftCount ? setFirstTimer(false) : setFirstTimer(true);
+    setLoader(false);
   };
 
   useEffect(() => {
-    setLoad(true);
-    checkUserNFTCount();
-  }, [contract, wallet]);
+    setLoader(true);
+    getNFTCount();
+  }, []);
 
   return (
     <div>
       <Navbar />
       {firstTimer ? (
-        <FirstTimer firstTimer={firstTimer} />
+        <FirstTimer
+          firstTimer={firstTimer}
+          contract={contract}
+          publicAddress={publicAddress}
+        />
       ) : (
         <div>not first timer</div>
       )}

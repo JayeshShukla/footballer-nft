@@ -17,8 +17,9 @@ export const firstNFT = async (objectID) => {
   const { PAC, DRI, SHO, DEF, PAS, PHY, OVR } = await generateRandomAttributes(
     33
   );
-  const { lastname, image } = PlayersList[objectID - 1];
+  const { firstname, lastname, image } = PlayersList[objectID - 1];
   const stringFormatImage = generateGoldSvg(
+    firstname,
     lastname,
     image,
     PAC,
@@ -30,6 +31,7 @@ export const firstNFT = async (objectID) => {
     OVR
   );
 
-  const encodedSvg = btoa(stringFormatImage);
-  console.log(encodedSvg);
+  let encodedSvg = btoa(stringFormatImage);
+  encodedSvg = "data:image/svg+xml;base64," + encodedSvg;
+  return encodedSvg;
 };

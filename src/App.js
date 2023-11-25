@@ -1,63 +1,43 @@
 import "./App.css";
 import Home from "./components/Home";
 import { useEffect, useState } from "react";
-import { ethers } from "ethers";
-import contractDetails from "./asset/contractDetails.json";
 import { ReusableLoader } from "./reusable/ReusableLoader";
-import { putPlayerList } from "./utility/putPlayerList";
+import { checkSetup } from "./utility/contractAPI";
 
 function App() {
-  const [wallet, setWallet] = useState(false);
-  const [contract, setContract] = useState({});
-  const [load, setLoad] = useState(true);
-
-  const checkWallet = () => {
-    if (window.ethereum) {
-      setWallet(window.ethereum);
-    } else {
-      setWallet(false);
+  const [setupDone, setSetup] = useState(false);
+  const [wallet, setWallet] = useState();
+  const [publicAddress, setPublicAddress] = useState();
+  const [loader, setLoader] = useState(true);
+  const [contract, setContract] = useState();
+  const handleCheck = async () => {
+    const { publicAddress, contract, wallet } = await checkSetup();
+    // console.log(publicAddress, contract, wallet);
+    if (publicAddress && contract && wallet) {
+      setSetup(true);
+      setContract(contract);
+      setWallet(wallet);
+      setPublicAddress(publicAddress);
     }
-  };
-
-  const getContractObject = async () => {
-    try {
-      if (wallet) {
-        const provider = new ethers.providers.Web3Provider(wallet);
-        const daiContract = new ethers.Contract(
-          contractDetails.daiAddress,
-          contractDetails.daiAbi,
-          provider
-        );
-        setContract(daiContract);
-      }
-    } catch (error) {
-      console.log(error);
-      setContract({});
-    }
+    setLoader(false);
   };
 
   useEffect(() => {
-    const setupContractAndFinishLoading = async () => {
-      await getContractObject();
-      setLoad(false);
-    };
-
-    checkWallet();
-    if (wallet) {
-      setupContractAndFinishLoading();
-      putPlayerList();
-    } else {
-      setLoad(false);
-    }
-  }, [wallet]);
+    handleCheck();
+  }, []);
 
   return (
     <div className="App vh-100 pt4">
-      {load && <ReusableLoader />}
-      {wallet ? (
-        <Home wallet={wallet} contract={contract} setLoad={setLoad} />
+      {loader && <ReusableLoader />}
+      {setupDone ? (
+        <Home
+          wallet={wallet}
+          contract={contract}
+          setLoader={setLoader}
+          publicAddress={publicAddress}
+        />
       ) : (
-        <div>Please Install an Ethereum Wallet</div>
+        wallet == null && <div>Please Install an Ethereum Wallet</div>
       )}
     </div>
   );
