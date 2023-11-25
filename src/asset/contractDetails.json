@@ -1,78 +1,49 @@
 {
-  "daiAddress": "0x65E5bb942Aa67C08451D061012f72586Be905AFa",
+  "daiAddress": "0x7a18a9371f678751938a2693853C8c4d7ef2dCc8",
   "daiAbi": [
     {
       "inputs": [
         {
-          "internalType": "string",
-          "name": "_name",
-          "type": "string"
+          "internalType": "address",
+          "name": "clientAddress",
+          "type": "address"
         },
         {
           "internalType": "uint256",
-          "name": "_age",
+          "name": "objectID",
           "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "_email",
-          "type": "string"
         }
       ],
-      "name": "setUserDetails",
-      "outputs": [],
+      "name": "addUser",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
       "stateMutability": "nonpayable",
       "type": "function"
     },
     {
-      "anonymous": false,
       "inputs": [
         {
-          "indexed": true,
           "internalType": "address",
-          "name": "userAddress",
+          "name": "",
           "type": "address"
         },
         {
-          "indexed": false,
-          "internalType": "string",
-          "name": "name",
-          "type": "string"
-        },
-        {
-          "indexed": false,
           "internalType": "uint256",
-          "name": "age",
+          "name": "",
           "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "string",
-          "name": "email",
-          "type": "string"
         }
       ],
-      "name": "UserDetailsSet",
-      "type": "event"
-    },
-    {
-      "inputs": [],
-      "name": "getUserDetails",
+      "name": "addressToUintArray",
       "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        },
         {
           "internalType": "uint256",
           "name": "",
           "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
         }
       ],
       "stateMutability": "view",
@@ -82,26 +53,16 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "",
+          "name": "clientAddress",
           "type": "address"
         }
       ],
-      "name": "users",
+      "name": "clientNFTCount",
       "outputs": [
         {
-          "internalType": "string",
-          "name": "name",
-          "type": "string"
-        },
-        {
           "internalType": "uint256",
-          "name": "age",
+          "name": "",
           "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "email",
-          "type": "string"
         }
       ],
       "stateMutability": "view",

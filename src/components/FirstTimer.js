@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import algoliasearch from "algoliasearch/lite";
 import { PlayerCard } from "../reusable/PlayerCard";
 
-const FirstTimer = ({ firstTimer }) => {
+const FirstTimer = ({ firstTimer, contract, publicAddress }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
 
@@ -52,6 +52,8 @@ const FirstTimer = ({ firstTimer }) => {
             item={item}
             i={i}
             firstTimer={firstTimer}
+            contract={contract}
+            publicAddress={publicAddress}
           />
         ))}
       </div>

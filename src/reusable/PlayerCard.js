@@ -1,7 +1,13 @@
 import React from "react";
-import { firstNFT } from "../utility/cardMiddleware";
+import { addFirstNFT } from "../utility/contractAPI";
 
-export const PlayerCard = ({ item, i, firstTimer }) => {
+export const PlayerCard = ({
+  item,
+  i,
+  firstTimer,
+  contract,
+  publicAddress,
+}) => {
   return (
     <div
       className="white-90 bg-yellow pointer w-100 w-40-m w-30-ns w-20-l h5 mb5 mb3-m ma4-ns"
@@ -22,7 +28,9 @@ export const PlayerCard = ({ item, i, firstTimer }) => {
       <div className="w-100">
         <button
           className="w-100"
-          onClick={() => firstTimer && firstNFT(item.objectID)}
+          onClick={() =>
+            firstTimer && addFirstNFT(item.objectID, contract, publicAddress)
+          }
         >
           {firstTimer ? `Mint NFT(${item.price})` : `Upgrade NFT`}
         </button>
