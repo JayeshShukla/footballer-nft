@@ -9,13 +9,15 @@ const Home = ({ wallet, contract, setLoader, publicAddress }) => {
   const getNFTCount = async () => {
     const nftCount = await getNFTCountPerAddress(contract, publicAddress);
     nftCount ? setFirstTimer(false) : setFirstTimer(true);
-    setLoader(false);
   };
 
   useEffect(() => {
     setLoader(true);
     getNFTCount();
-  }, []);
+    if (firstTimer === false || firstTimer === true) {
+      setLoader(false);
+    }
+  }, [firstTimer]);
 
   return (
     <div>
@@ -25,9 +27,11 @@ const Home = ({ wallet, contract, setLoader, publicAddress }) => {
           firstTimer={firstTimer}
           contract={contract}
           publicAddress={publicAddress}
+          wallet={wallet}
         />
       ) : (
         <div>not first timer</div>
+        //when you create a component of it please setLoader as true to manage the loading.
       )}
     </div>
   );

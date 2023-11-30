@@ -1,29 +1,17 @@
 import React, { useState, useEffect } from "react";
-import algoliasearch from "algoliasearch/lite";
 import { PlayerCard } from "../reusable/PlayerCard";
+import { getSearchResults } from "../utility/algoliaAPI";
 
-const FirstTimer = ({ firstTimer, contract, publicAddress }) => {
+const FirstTimer = ({ firstTimer, contract, publicAddress, wallet }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
 
-  // Algolia configuration
-  const searchClient = algoliasearch(
-    process.env.REACT_APP_ALGOLIA_APPLICATION_ID,
-    process.env.REACT_APP_ALGOLIA_API_KEY
-  );
-  const index = searchClient.initIndex("Footballer-NFT");
-
   const handleSearch = async () => {
-    if (searchTerm.trim() === "") {
+    const searchResult = await getSearchResults(searchTerm);
+    if (searchResult) {
+      setResults(searchResult);
+    } else {
       setResults([]);
-      return;
-    }
-
-    try {
-      const { hits } = await index.search(searchTerm);
-      setResults(hits);
-    } catch (error) {
-      console.error("Error searching:", error);
     }
   };
 
@@ -54,6 +42,7 @@ const FirstTimer = ({ firstTimer, contract, publicAddress }) => {
             firstTimer={firstTimer}
             contract={contract}
             publicAddress={publicAddress}
+            wallet={wallet}
           />
         ))}
       </div>

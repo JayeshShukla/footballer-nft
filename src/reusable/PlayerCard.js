@@ -7,6 +7,7 @@ export const PlayerCard = ({
   firstTimer,
   contract,
   publicAddress,
+  wallet,
 }) => {
   return (
     <div
@@ -29,7 +30,7 @@ export const PlayerCard = ({
         <button
           className="w-100"
           onClick={() =>
-            firstTimer && addFirstNFT(item.objectID, contract, publicAddress)
+            firstTimer && addFirstNFT(item, wallet, contract, publicAddress)
           }
         >
           {firstTimer ? `Mint NFT(${item.price})` : `Upgrade NFT`}

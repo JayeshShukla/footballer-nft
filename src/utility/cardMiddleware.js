@@ -31,7 +31,19 @@ export const firstNFT = async (objectID) => {
     OVR
   );
 
-  let encodedSvg = btoa(stringFormatImage);
-  encodedSvg = "data:image/svg+xml;base64," + encodedSvg;
-  return encodedSvg;
+  // let encodedSvg = btoa(stringFormatImage);
+  // encodedSvg = "data:image/svg+xml;base64," + encodedSvg;
+  return stringFormatImage;
+};
+
+export const makeTokenURI = async () => {
+  // "{",
+  // '"name": "#',
+  // tokenId.toString(),
+  // '",',
+  // '"description": "Battles on chain",',
+  // '"image": "',
+  // generateCharacter(tokenId),
+  // '"',
+  // "}"
 };
