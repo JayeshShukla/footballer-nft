@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import { useEffect, useState } from "react";
 import { ReusableLoader } from "./reusable/ReusableLoader";
 import { checkSetup } from "./utility/contractAPI";
+import { updateAlgolia } from "./utility/algoliaAPI";
 
 function App() {
   const [setupDone, setSetup] = useState(false);
@@ -10,6 +11,10 @@ function App() {
   const [publicAddress, setPublicAddress] = useState();
   const [loader, setLoader] = useState(true);
   const [contract, setContract] = useState();
+  const [errorText, setErrorText] = useState(
+    "Please Install an Ethereum Wallet"
+  );
+
   const handleCheck = async () => {
     const { publicAddress, contract, wallet } = await checkSetup();
     // console.log(publicAddress, contract, wallet);
@@ -18,13 +23,17 @@ function App() {
       setContract(contract);
       setWallet(wallet);
       setPublicAddress(publicAddress);
+    } else if (!publicAddress && !contract && wallet) {
+      console.log("Denied Login");
+      setErrorText("Please Login To Your Wallet");
     }
     setLoader(false);
   };
 
   useEffect(() => {
+    updateAlgolia();
     handleCheck();
-  }, []);
+  }, [setupDone]);
 
   return (
     <div className="App vh-100 pt4">
@@ -37,7 +46,7 @@ function App() {
           publicAddress={publicAddress}
         />
       ) : (
-        wallet == null && <div>Please Install an Ethereum Wallet</div>
+        <div>{errorText}</div>
       )}
     </div>
   );

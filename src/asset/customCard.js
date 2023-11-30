@@ -20,7 +20,7 @@ export const generateGoldSvg = (
 <line x1="10" y1="40" x2="80" y2="5" stroke="black" stroke-width="0.1"/>
 <text x="15%" y="20%" class="base" dominant-baseline="middle" text-anchor="middle" font-size="15" font-family="Arial" fill="#28282B">${OVR}</text>
  <circle cx="50" cy="140" r="90" fill="#28282B"/>
-<image href="${image}" height="70" width="100" y="-10"/>
+ <image href="${image}" height="70" width="100" y="-10"/>
 <text x="50%" y="70%" class="base" dominant-baseline="middle" text-anchor="middle" font-size="9" font-family="Arial" fill="#D4AF37">${firstname} ${lastname}</text>
 <line x1="10" y1="77.5" x2="90" y2="77.5" stroke="white" stroke-width="0.1"/>
 <line x1="50" y1="82.5" x2="50" y2="112.5" stroke="white" stroke-width="0.1"/>

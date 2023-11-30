@@ -73,14 +73,78 @@ export const checkSetup = async () => {
 
 export const getNFTCountPerAddress = async (contract, publicAddress) => {
   try {
-    const nftCount = await contract.clientNFTCount(publicAddress); //change the  function  name
+    const nftCount = await contract.usersTotalToken(publicAddress); //change the  function  name
     return nftCount.toNumber();
   } catch (error) {
     console.log("Some Issue while getting NFT Count Per Address", error);
   }
 };
 
-export const addFirstNFT = async (objectID, contract, publicAddress) => {
-  const tokenURI = await firstNFT(objectID);
-  console.log(tokenURI);
+// export const addFirstNFT = async (item, contract, publicAddress) => {
+//   const provider = new ethers.providers.JsonRpcProvider(
+//     process.env.REACT_APP_ALCHEMY_API_KEY_URL
+//   );
+//   const {
+//     objectID,
+//     firstname,
+//     lastname,
+//     country,
+//     jerseyNo,
+//     image,
+//     price,
+//     description,
+//     club,
+//   } = item;
+//   const nftURI = await firstNFT(objectID);
+//   // console.log(nftURI);
+//   const signer = provider.getSigner();
+//   console.log(signer);
+//   const response = await contract.safeMint(
+//     publicAddress,
+//     objectID,
+//     jerseyNo,
+//     nftURI,
+//     country,
+//     club,
+//     description
+//   );
+//   console.log(response);
+// };
+
+export const addFirstNFT = async (item, wallet, contract, publicAddress) => {
+  try {
+    const provider = new ethers.providers.Web3Provider(wallet);
+    const {
+      objectID,
+      firstname,
+      lastname,
+      country,
+      jerseyNo,
+      image,
+      price,
+      description,
+      club,
+    } = item;
+
+    const nftURI = await firstNFT(objectID);
+    console.log(nftURI);
+    const signer = provider.getSigner();
+    if (nftURI && contract && contract.safeMint && contract.connect) {
+      const connectedContract = contract.connect(signer);
+      const response = await connectedContract.safeMint(
+        publicAddress,
+        objectID,
+        jerseyNo,
+        nftURI,
+        country,
+        club,
+        description
+      );
+      console.log("Response:", response);
+    } else {
+      console.error("Invalid contract or missing methods.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
 };

@@ -6,7 +6,9 @@
     "country": "Portugal",
     "jerseyNo": "7",
     "image": "",
-    "price": "3 ETH"
+    "price": "3 ETH",
+    "description": "Cristiano Ronaldo, born on February 5, 1985, in Funchal, Madeira, Portugal, is a professional footballer widely considered one of the greatest of all time. He has achieved numerous awards and records throughout his career, playing for clubs like Manchester United and Real Madrid.",
+    "club": "Real Madrid"
   },
   {
     "objectID": 2,
@@ -15,7 +17,9 @@
     "country": "Argentina",
     "jerseyNo": "10",
     "image": "https://ipfs.filebase.io/ipfs/Qmaa5ft5VqwFvZYwLHACGqHLurGb98ASYM9uTgfaSfgSgv",
-    "price": "3 ETH"
+    "price": "3 ETH",
+    "description": "Lionel Messi, born on June 24, 1987, in Rosario, Argentina, is considered one of the greatest footballers in the world. He spent the majority of his career at FC Barcelona before moving to Paris Saint-Germain (PSG) in 2021.",
+    "club": "FC Barcelona"
   },
   {
     "objectID": 3,
@@ -24,7 +28,9 @@
     "country": "Brazil",
     "jerseyNo": "11",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Neymar Jr., born on February 5, 1992, in Mogi das Cruzes, Brazil, is a skillful forward known for his flair and goal-scoring abilities. He has played for top clubs like Barcelona and Paris Saint-Germain (PSG).",
+    "club": "Paris Saint-Germain"
   },
   {
     "objectID": 4,
@@ -33,7 +39,9 @@
     "country": "Egypt",
     "jerseyNo": "11",
     "image": "",
-    "price": "1 ETH"
+    "price": "1 ETH",
+    "description": "Mohamed Salah, born on June 15, 1992, in Nagrig, Egypt, is a prolific Egyptian forward known for his speed and goal-scoring prowess. He has achieved success with clubs like AS Roma and Liverpool.",
+    "club": "Liverpool"
   },
   {
     "objectID": 5,
@@ -42,7 +50,9 @@
     "country": "France",
     "jerseyNo": "7",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Kylian Mbappe, born on December 20, 1998, in Bondy, France, is a talented French forward recognized for his speed and technical skills. He played a crucial role in France's 2018 FIFA World Cup victory.",
+    "club": "Paris Saint-Germain"
   },
   {
     "objectID": 6,
@@ -51,7 +61,9 @@
     "country": "Poland",
     "jerseyNo": "9",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Robert Lewandowski, born on August 21, 1988, in Warsaw, Poland, is a prolific striker known for his goal-scoring ability. He has achieved success with clubs like Borussia Dortmund and Bayern Munich.",
+    "club": "Bayern Munich"
   },
   {
     "objectID": 7,
@@ -60,7 +72,9 @@
     "country": "Spain",
     "jerseyNo": "4",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Sergio Ramos, born on March 30, 1986, in Camas, Spain, is a Spanish central defender known for his leadership on the field. He had a successful career with Real Madrid before joining Paris Saint-Germain (PSG).",
+    "club": "Real Madrid"
   },
   {
     "objectID": 8,
@@ -69,7 +83,9 @@
     "country": "Belgium",
     "jerseyNo": "17",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Kevin De Bruyne, born on June 28, 1991, in Drongen, Belgium, is a highly skilled midfielder known for his passing and creativity. He has played a key role for clubs like Manchester City and the Belgium national team.",
+    "club": "Manchester City"
   },
   {
     "objectID": 9,
@@ -78,7 +94,9 @@
     "country": "Croatia",
     "jerseyNo": "10",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Luka Modric, born on September 9, 1985, in Zadar, Croatia, is a Croatian midfielder known for his technical ability and vision on the pitch. He played a pivotal role in Real Madrid's success and won the Ballon d'Or in 2018.",
+    "club": "Real Madrid"
   },
   {
     "objectID": 10,
@@ -87,7 +105,9 @@
     "country": "France",
     "jerseyNo": "7",
     "image": "",
-    "price": "1 ETH"
+    "price": "1 ETH",
+    "description": "Antoine Griezmann, born on March 21, 1991, in Mâcon, France, is a skillful forward known for his versatility and goal-scoring ability. He played a key role in France's 2018 FIFA World Cup victory.",
+    "club": "Atletico Madrid"
   },
   {
     "objectID": 11,
@@ -96,7 +116,9 @@
     "country": "England",
     "jerseyNo": "9",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Harry Kane, born on July 28, 1993, in Walthamstow, London, England, is a prolific English striker known for his goal-scoring prowess and leadership. He has spent the majority of his career with Tottenham Hotspur.",
+    "club": "Tottenham Hotspur"
   },
   {
     "objectID": 12,
@@ -105,25 +127,31 @@
     "country": "Norway",
     "jerseyNo": "9",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Erling Haaland, born on July 21, 2000, in Leeds, England, is a rising Norwegian striker known for his incredible goal-scoring record. He currently plays for Borussia Dortmund in the Bundesliga.",
+    "club": "Manchester City"
   },
   {
     "objectID": 13,
+    "firstname": "Sadio",
+    "lastname": "Mane",
+    "country": "Senegal",
+    "jerseyNo": "10",
+    "image": "",
+    "price": "2 ETH",
+    "description": "Sadio Mane, born on April 10, 1992, in Sedhiou, Senegal, is a talented forward known for his speed and goal-scoring ability. He has been a key player for Liverpool and the Senegal national team.",
+    "club": "Liverpool"
+  },
+  {
+    "objectID": 14,
     "firstname": "Gareth",
     "lastname": "Bale",
     "country": "Wales",
     "jerseyNo": "11",
     "image": "",
-    "price": "1 ETH"
-  },
-  {
-    "objectID": 14,
-    "firstname": "Raheem",
-    "lastname": "Sterling",
-    "country": "England",
-    "jerseyNo": "7",
-    "image": "",
-    "price": "1 ETH"
+    "price": "1 ETH",
+    "description": "Gareth Bale, born on July 16, 1989, in Cardiff, Wales, is a versatile forward known for his pace and powerful shots. He had a successful career with Tottenham Hotspur and Real Madrid.",
+    "club": "Real Madrid"
   },
   {
     "objectID": 15,
@@ -132,52 +160,64 @@
     "country": "Netherlands",
     "jerseyNo": "4",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Virgil van Dijk, born on July 8, 1991, in Breda, Netherlands, is a commanding Dutch central defender known for his aerial ability and leadership. He played a key role in Liverpool's success.",
+    "club": "Liverpool"
   },
   {
     "objectID": 16,
-    "firstname": "Karim",
-    "lastname": "Benzema",
-    "country": "France",
-    "jerseyNo": "9",
+    "firstname": "Riyad",
+    "lastname": "Mahrez",
+    "country": "Algeria",
+    "jerseyNo": "26",
     "image": "",
-    "price": "2 ETH"
+    "price": "1 ETH",
+    "description": "Riyad Mahrez, born on February 21, 1991, in Sarcelles, France, is a skillful Algerian forward known for his dribbling and goal-scoring ability. He has been a key player for Manchester City.",
+    "club": "Manchester City"
   },
   {
     "objectID": 17,
-    "firstname": "N'Golo",
-    "lastname": "Kante",
-    "country": "France",
-    "jerseyNo": "7",
+    "firstname": "Bruno",
+    "lastname": "Fernandes",
+    "country": "Portugal",
+    "jerseyNo": "18",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Bruno Fernandes, born on September 8, 1994, in Maia, Portugal, is a creative midfielder known for his passing and goal-scoring ability. He plays for Manchester United and the Portugal national team.",
+    "club": "Manchester United"
   },
   {
     "objectID": 18,
-    "firstname": "Sadio",
-    "lastname": "Mane",
-    "country": "Senegal",
-    "jerseyNo": "10",
-    "image": "",
-    "price": "1 ETH"
-  },
-  {
-    "objectID": 19,
     "firstname": "Joshua",
     "lastname": "Kimmich",
     "country": "Germany",
     "jerseyNo": "6",
     "image": "",
-    "price": "1 ETH"
+    "price": "2 ETH",
+    "description": "Joshua Kimmich, born on February 8, 1995, in Rottweil, Germany, is a versatile midfielder known for his technical skills and defensive capabilities. He plays for Bayern Munich and the Germany national team.",
+    "club": "Bayern Munich"
+  },
+  {
+    "objectID": 19,
+    "firstname": "Heung-Min",
+    "lastname": "Son",
+    "country": "South Korea",
+    "jerseyNo": "7",
+    "image": "",
+    "price": "1 ETH",
+    "description": "Heung-Min Son, born on July 8, 1992, in Chuncheon, South Korea, is a talented forward known for his speed and goal-scoring ability. He plays for Tottenham Hotspur and the South Korea national team.",
+    "club": "Tottenham Hotspur"
   },
   {
     "objectID": 20,
-    "firstname": "Paul",
-    "lastname": "Pogba",
-    "country": "France",
-    "jerseyNo": "6",
+    "firstname": "Romelu",
+    "lastname": "Lukaku",
+    "country": "Belgium",
+    "jerseyNo": "9",
     "image": "",
-    "price": "1 ETH"
+    "price": "2 ETH",
+    "description": "Romelu Lukaku, born on May 13, 1993, in Antwerp, Belgium, is a powerful striker known for his strength and goal-scoring ability. He plays for Chelsea and the Belgium national team.",
+    "club": "Chelsea"
   },
   {
     "objectID": 21,
@@ -186,7 +226,9 @@
     "country": "Brazil",
     "jerseyNo": "6",
     "image": "",
-    "price": "1 ETH"
+    "price": "1 ETH",
+    "description": "Thiago Silva, born on September 22, 1984, in Rio de Janeiro, Brazil, is a Brazilian center-back known for his defensive skills and leadership. He has had a successful career with clubs like AC Milan, Paris Saint-Germain (PSG), and Chelsea.",
+    "club": "Chelsea"
   },
   {
     "objectID": 22,
@@ -195,7 +237,9 @@
     "country": "Belgium",
     "jerseyNo": "7",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Eden Hazard, born on January 7, 1991, in La Louviere, Belgium, is a Belgian forward known for his dribbling and creativity. He has played for clubs like Chelsea and Real Madrid, winning domestic and international titles.",
+    "club": "Real Madrid"
   },
   {
     "objectID": 23,
@@ -204,7 +248,9 @@
     "country": "Germany",
     "jerseyNo": "8",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Toni Kroos, born on January 4, 1990, in Greifswald, East Germany, is a German midfielder known for his passing accuracy and vision on the field. He has had a successful career with clubs like Bayern Munich and Real Madrid, winning multiple league titles and UEFA Champions League trophies.",
+    "club": "Real Madrid"
   },
   {
     "objectID": 24,
@@ -213,7 +259,9 @@
     "country": "Belgium",
     "jerseyNo": "9",
     "image": "",
-    "price": "1 ETH"
+    "price": "1 ETH",
+    "description": "Romelu Lukaku, born on May 13, 1993, in Antwerp, Belgium, is a powerful Belgian striker known for his physicality and goal-scoring prowess. He has played for top clubs like Chelsea, Inter Milan, and Manchester United.",
+    "club": "Chelsea"
   },
   {
     "objectID": 25,
@@ -222,7 +270,9 @@
     "country": "Portugal",
     "jerseyNo": "18",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Bruno Fernandes, born on September 8, 1994, in Maia, Portugal, is a Portuguese midfielder known for his playmaking abilities and goal-scoring from midfield. He has been a key player for Manchester United, contributing with assists and goals.",
+    "club": "Manchester United"
   },
   {
     "objectID": 26,
@@ -231,7 +281,9 @@
     "country": "England",
     "jerseyNo": "25",
     "image": "",
-    "price": "1 ETH"
+    "price": "1 ETH",
+    "description": "Jadon Sancho, born on March 25, 2000, in London, England, is an English winger known for his skillful dribbling and creativity. He gained prominence at Borussia Dortmund before moving to Manchester United.",
+    "club": "Manchester United"
   },
   {
     "objectID": 27,
@@ -240,7 +292,9 @@
     "country": "England",
     "jerseyNo": "20",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Phil Foden, born on May 28, 2000, in Stockport, England, is an English midfielder known for his technical ability and vision on the pitch. He is a product of the Manchester City youth academy and has become a key player for both club and country.",
+    "club": "Manchester City"
   },
   {
     "objectID": 28,
@@ -249,7 +303,9 @@
     "country": "Austria",
     "jerseyNo": "27",
     "image": "",
-    "price": "1 ETH"
+    "price": "1 ETH",
+    "description": "David Alaba, born on June 24, 1992, in Vienna, Austria, is a versatile Austrian defender known for his ability to play multiple positions. He spent the majority of his career at Bayern Munich before joining Real Madrid.",
+    "club": "Real Madrid"
   },
   {
     "objectID": 29,
@@ -258,16 +314,20 @@
     "country": "Egypt",
     "jerseyNo": "25",
     "image": "",
-    "price": "1 ETH"
+    "price": "1 ETH",
+    "description": "Mohamed Elneny, born on July 11, 1992, in El-Mahalla El-Kubra, Egypt, is an Egyptian midfielder known for his work rate and passing ability. He has played for clubs like Basel and Arsenal.",
+    "club": "Arsenal"
   },
   {
     "objectID": 30,
-    "firstname": "KalobjectIDou",
+    "firstname": "Kalidou",
     "lastname": "Koulibaly",
     "country": "Senegal",
     "jerseyNo": "26",
     "image": "",
-    "price": "1 ETH"
+    "price": "1 ETH",
+    "description": "Kalidou Koulibaly, born on June 20, 1991, in Saint-Dié-des-Vosges, France, is a Senegalese central defender known for his strength and defensive skills. He has been a stalwart for Napoli in Serie A.",
+    "club": "Napoli"
   },
   {
     "objectID": 31,
@@ -276,7 +336,9 @@
     "country": "Germany",
     "jerseyNo": "29",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Kai Havertz, born on June 11, 1999, in Aachen, Germany, is a German attacking midfielder known for his versatility and technical ability. He joined Chelsea in the English Premier League after a successful spell with Bayer Leverkusen.",
+    "club": "Chelsea"
   },
   {
     "objectID": 32,
@@ -285,7 +347,9 @@
     "country": "Brazil",
     "jerseyNo": "5",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Marquinhos, full name Marcos Aoás Corrêa, born on May 14, 1994, in São Paulo, Brazil, is a Brazilian center-back known for his defensive prowess. He has been a key player for Paris Saint-Germain (PSG) and the Brazilian national team.",
+    "club": "Paris Saint-Germain"
   },
   {
     "objectID": 33,
@@ -294,7 +358,9 @@
     "country": "Argentina",
     "jerseyNo": "11",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Angel Di Maria, born on February 14, 1988, in Rosario, Argentina, is an Argentine winger known for his pace and skill. He has played for top clubs like Real Madrid and Manchester United, contributing to multiple league and Champions League titles.",
+    "club": "Paris Saint-Germain"
   },
   {
     "objectID": 34,
@@ -303,7 +369,9 @@
     "country": "Scotland",
     "jerseyNo": "26",
     "image": "",
-    "price": "1 ETH"
+    "price": "1 ETH",
+    "description": "Andrew Robertson, born on March 11, 1994, in Glasgow, Scotland, is a Scottish left-back known for his attacking contributions and defensive solidity. He has been a key player for Liverpool in the English Premier League.",
+    "club": "Liverpool"
   },
   {
     "objectID": 35,
@@ -312,7 +380,9 @@
     "country": "Portugal",
     "jerseyNo": "27",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Joao Cancelo, born on May 27, 1994, in Barreiro, Portugal, is a Portuguese right-back known for his versatility and attacking prowess. He plays for Manchester City in the English Premier League.",
+    "club": "Manchester City"
   },
   {
     "objectID": 36,
@@ -321,7 +391,9 @@
     "country": "Portugal",
     "jerseyNo": "3",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Ruben Dias, born on May 14, 1997, in Amadora, Portugal, is a Portuguese center-back known for his defensive skills. He joined Manchester City and played a crucial role in their Premier League title-winning campaign.",
+    "club": "Manchester City"
   },
   {
     "objectID": 37,
@@ -330,7 +402,9 @@
     "country": "United States",
     "jerseyNo": "22",
     "image": "",
-    "price": "1 ETH"
+    "price": "1 ETH",
+    "description": "Christian Pulisic, born on September 18, 1998, in Hershey, Pennsylvania, USA, is an American winger known for his speed and technical ability. He plays for Chelsea in the English Premier League.",
+    "club": "Chelsea"
   },
   {
     "objectID": 38,
@@ -339,7 +413,9 @@
     "country": "Spain",
     "jerseyNo": "6",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Thiago Alcantara, born on April 11, 1991, in San Pietro Vernotico, Italy, is a Spanish midfielder known for his passing and ball control. He has played for top clubs like Barcelona, Bayern Munich, and Liverpool.",
+    "club": "Liverpool"
   },
   {
     "objectID": 39,
@@ -348,7 +424,9 @@
     "country": "Morocco",
     "jerseyNo": "22",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Hakim Ziyech, born on March 19, 1993, in Dronten, Netherlands, is a Moroccan attacking midfielder known for his creativity and set-piece ability. He joined Chelsea in the English Premier League.",
+    "club": "Chelsea"
   },
   {
     "objectID": 40,
@@ -357,7 +435,9 @@
     "country": "England",
     "jerseyNo": "10",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Jack Grealish, born on September 10, 1995, in Birmingham, England, is an English attacking midfielder known for his dribbling skills and vision. He transferred to Manchester City from Aston Villa, becoming one of the most expensive signings in English football.",
+    "club": "Manchester City"
   },
   {
     "objectID": 41,
@@ -366,7 +446,9 @@
     "country": "Netherlands",
     "jerseyNo": "4",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Matthijs de Ligt, born on August 12, 1999, in Leiderdorp, Netherlands, is a Dutch center-back known for his strength and composure. He plays for Juventus in Serie A and is a key part of the Netherlands national team.",
+    "club": "Juventus"
   },
   {
     "objectID": 42,
@@ -375,7 +457,9 @@
     "country": "Brazil",
     "jerseyNo": "14",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Casemiro, full name Carlos Henrique Casimiro, born on February 23, 1992, in São José dos Campos, Brazil, is a Brazilian defensive midfielder known for his tackling and ball-winning abilities. He has been a crucial player for Real Madrid.",
+    "club": "Real Madrid"
   },
   {
     "objectID": 43,
@@ -384,7 +468,9 @@
     "country": "Argentina",
     "jerseyNo": "7",
     "image": "",
-    "price": "1 ETH"
+    "price": "1 ETH",
+    "description": "Mauro Icardi, born on February 19, 1993, in Rosario, Argentina, is an Argentine striker known for his goal-scoring instincts. He has played for clubs like Inter Milan and Paris Saint-Germain (PSG).",
+    "club": "Paris Saint-Germain"
   },
   {
     "objectID": 44,
@@ -393,7 +479,9 @@
     "country": "Germany",
     "jerseyNo": "25",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Thomas Muller, born on September 13, 1989, in Weilheim in Oberbayern, Germany, is a German forward known for his intelligence on the field and goal-scoring ability. He has spent his entire professional career at Bayern Munich.",
+    "club": "Bayern Munich"
   },
   {
     "objectID": 45,
@@ -402,7 +490,9 @@
     "country": "Italy",
     "jerseyNo": "17",
     "image": "",
-    "price": "1 ETH"
+    "price": "1 ETH",
+    "description": "Ciro Immobile is a prolific Italian striker known for his goal-scoring prowess and clinical finishing.",
+    "club": "Lazio"
   },
   {
     "objectID": 46,
@@ -411,7 +501,9 @@
     "country": "Netherlands",
     "jerseyNo": "21",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Frenkie de Jong is a talented Dutch midfielder recognized for his exceptional ball control and passing abilities.",
+    "club": "FC Barcelona"
   },
   {
     "objectID": 47,
@@ -420,7 +512,9 @@
     "country": "Costa Rica",
     "jerseyNo": "1",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Keylor Navas is a highly regarded Costa Rican goalkeeper known for his impressive shot-stopping skills.",
+    "club": "Paris Saint-Germain"
   },
   {
     "objectID": 48,
@@ -429,7 +523,9 @@
     "country": "Poland",
     "jerseyNo": "1",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Wojciech Szczesny is a Polish goalkeeper known for his commanding presence and excellent reflexes.",
+    "club": "AS Roma"
   },
   {
     "objectID": 49,
@@ -438,7 +534,9 @@
     "country": "Italy",
     "jerseyNo": "50",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Gianluigi Donnarumma is an Italian goalkeeper celebrated for his remarkable shot-stopping abilities and composure.",
+    "club": "Paris Saint-Germain"
   },
   {
     "objectID": 50,
@@ -447,7 +545,9 @@
     "country": "Spain",
     "jerseyNo": "6",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Xavi Hernandez is a legendary Spanish midfielder known for his exceptional passing, vision, and leadership on the field.",
+    "club": "FC Barcelona"
   },
   {
     "objectID": 51,
@@ -456,6 +556,8 @@
     "country": "Spain",
     "jerseyNo": "8",
     "image": "",
-    "price": "2 ETH"
+    "price": "2 ETH",
+    "description": "Andres Iniesta is a retired Spanish midfielder widely regarded for his skillful playmaking and contributions to FC Barcelona and the Spanish national team.",
+    "club": "FC Barcelona"
   }
 ]
