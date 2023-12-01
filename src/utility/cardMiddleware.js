@@ -18,6 +18,7 @@ export const firstNFT = async (objectID) => {
     33
   );
   const { firstname, lastname, image } = PlayersList[objectID - 1];
+
   const stringFormatImage = generateGoldSvg(
     firstname,
     lastname,
@@ -34,16 +35,4 @@ export const firstNFT = async (objectID) => {
   // let encodedSvg = btoa(stringFormatImage);
   // encodedSvg = "data:image/svg+xml;base64," + encodedSvg;
   return stringFormatImage;
-};
-
-export const makeTokenURI = async () => {
-  // "{",
-  // '"name": "#',
-  // tokenId.toString(),
-  // '",',
-  // '"description": "Battles on chain",',
-  // '"image": "',
-  // generateCharacter(tokenId),
-  // '"',
-  // "}"
 };

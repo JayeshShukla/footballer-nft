@@ -80,37 +80,6 @@ export const getNFTCountPerAddress = async (contract, publicAddress) => {
   }
 };
 
-// export const addFirstNFT = async (item, contract, publicAddress) => {
-//   const provider = new ethers.providers.JsonRpcProvider(
-//     process.env.REACT_APP_ALCHEMY_API_KEY_URL
-//   );
-//   const {
-//     objectID,
-//     firstname,
-//     lastname,
-//     country,
-//     jerseyNo,
-//     image,
-//     price,
-//     description,
-//     club,
-//   } = item;
-//   const nftURI = await firstNFT(objectID);
-//   // console.log(nftURI);
-//   const signer = provider.getSigner();
-//   console.log(signer);
-//   const response = await contract.safeMint(
-//     publicAddress,
-//     objectID,
-//     jerseyNo,
-//     nftURI,
-//     country,
-//     club,
-//     description
-//   );
-//   console.log(response);
-// };
-
 export const addFirstNFT = async (item, wallet, contract, publicAddress) => {
   try {
     const provider = new ethers.providers.Web3Provider(wallet);
