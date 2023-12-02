@@ -96,7 +96,6 @@ export const addFirstNFT = async (item, wallet, contract, publicAddress) => {
     } = item;
 
     const nftURI = await firstNFT(objectID);
-    console.log(nftURI);
     const signer = provider.getSigner();
     if (nftURI && contract && contract.safeMint && contract.connect) {
       const connectedContract = contract.connect(signer);
