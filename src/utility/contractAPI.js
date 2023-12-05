@@ -76,6 +76,7 @@ export const getNFTCountPerAddress = async (contract, publicAddress) => {
     const nftCount = await contract.usersTotalToken(publicAddress); //change the  function  name
     return nftCount.toNumber();
   } catch (error) {
+    console.log("I guess the wallet is connected to different network");
     console.log("Some Issue while getting NFT Count Per Address", error);
   }
 };

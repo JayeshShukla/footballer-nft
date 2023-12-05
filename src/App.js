@@ -1,5 +1,5 @@
 import "./App.css";
-import Home from "./components/Home";
+import Landing from "./components/Landing";
 import { useEffect, useState } from "react";
 import { ReusableLoader } from "./reusable/ReusableLoader";
 import { checkSetup } from "./utility/contractAPI";
@@ -39,7 +39,7 @@ function App() {
     <div className="App vh-100 pt4">
       {loader && <ReusableLoader />}
       {setupDone ? (
-        <Home
+        <Landing
           wallet={wallet}
           contract={contract}
           setLoader={setLoader}

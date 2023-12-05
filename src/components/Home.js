@@ -1,39 +1,36 @@
 import React, { useEffect, useState } from "react";
-import FirstTimer from "./FirstTimer";
-import { Navbar } from "./Navbar";
-import { getNFTCountPerAddress } from "../utility/contractAPI";
+import { fetchUsersNFT } from "../utility/alchemyAPI";
+import { NFTCard } from "../reusable/NFTCard";
 
-const Home = ({ wallet, contract, setLoader, publicAddress }) => {
-  const [firstTimer, setFirstTimer] = useState(null);
+export const Home = ({ publicAddress, setLoader }) => {
+  const [addressToFetch, setAddressToFetch] = useState(publicAddress);
+  const [nftList, setNFTList] = useState([]);
+  const [totalNFT, setTotalNFT] = useState(0);
 
-  const getNFTCount = async () => {
-    const nftCount = await getNFTCountPerAddress(contract, publicAddress);
-    nftCount ? setFirstTimer(false) : setFirstTimer(true);
+  const fetchNFTList = async () => {
+    try {
+      const { ownedNfts, totalCount } = await fetchUsersNFT(addressToFetch);
+      setNFTList(ownedNfts);
+      setTotalNFT(totalCount);
+    } finally {
+      setLoader(false);
+    }
   };
 
   useEffect(() => {
     setLoader(true);
-    getNFTCount();
-    if (firstTimer === false || firstTimer === true) {
-      setLoader(false);
-    }
-  }, [firstTimer]);
+    fetchNFTList();
+  }, [addressToFetch]);
 
   return (
-    <div>
-      <Navbar />
-      {firstTimer ? (
-        <FirstTimer
-          firstTimer={firstTimer}
-          contract={contract}
-          publicAddress={publicAddress}
-          wallet={wallet}
-        />
+    <>
+      <div>total NFT's Found : {totalNFT}</div>
+      {totalNFT ? (
+        nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)
       ) : (
-        <div>not first timer</div>
-        //when you create a component of it please setLoader as true to manage the loading.
+        <div>No NFT Found</div>
       )}
-    </div>
+    </>
   );
 };
 
