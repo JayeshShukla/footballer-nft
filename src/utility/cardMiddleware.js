@@ -1,7 +1,7 @@
 import PlayersList from "../asset/players.json";
 import { generateGoldSvg } from "../asset/customCard";
-import { FC_Barcelona } from "../svg-images/clubs/index";
-import { Argentina } from "../svg-images/flags/index";
+import { fcbarcelona } from "../svg-images/clubs/index";
+import { argentina } from "../svg-images/flags/index";
 
 export const generateRandomAttributes = async (maxLimit = 100) => {
   const PAC = Math.floor(Math.random() * maxLimit) + 1;
@@ -19,7 +19,7 @@ export const fetchClub = (club) => {
   let clubSvg = null;
   switch (club) {
     case "FCB":
-      clubSvg = FC_Barcelona();
+      clubSvg = fcbarcelona();
       break;
     case "club2":
       // Do something for club2
@@ -40,7 +40,7 @@ export const fetchCountry = (country) => {
   let countrySvg = null;
   switch (country) {
     case "Argentina":
-      countrySvg = Argentina();
+      countrySvg = argentina();
       break;
     case "club2":
       // Do something for club2
@@ -78,8 +78,5 @@ export const firstNFT = async (objectID) => {
     PHY,
     OVR
   );
-
-  // let encodedSvg = btoa(stringFormatImage);
-  // encodedSvg = "data:image/svg+xml;base64," + encodedSvg;
   return stringFormatImage;
 };

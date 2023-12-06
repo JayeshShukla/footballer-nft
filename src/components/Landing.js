@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import FirstTimer from "./FirstTimer";
 import Home from "./Home";
+import Toast from "../reusable/ReusableToast";
 import { getNFTCountPerAddress } from "../utility/contractAPI";
 
 const Landing = ({ wallet, contract, setLoader, publicAddress }) => {
   const [firstTimer, setFirstTimer] = useState(null);
+  const [toastNumber, setToastNumber] = useState(0);
 
   const getNFTCount = async () => {
     const nftCount = await getNFTCountPerAddress(contract, publicAddress);
@@ -17,7 +19,7 @@ const Landing = ({ wallet, contract, setLoader, publicAddress }) => {
     if (firstTimer === false || firstTimer === true) {
       setLoader(false);
     }
-  }, [firstTimer]);
+  }, [firstTimer, toastNumber]);
 
   return (
     <div>
@@ -27,10 +29,13 @@ const Landing = ({ wallet, contract, setLoader, publicAddress }) => {
           contract={contract}
           publicAddress={publicAddress}
           wallet={wallet}
+          setLoader={setLoader}
+          setToastNumber={setToastNumber}
         />
       ) : (
         <Home publicAddress={publicAddress} setLoader={setLoader} />
       )}
+      <Toast toastNumber={toastNumber} />
     </div>
   );
 };

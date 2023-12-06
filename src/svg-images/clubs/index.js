@@ -1,3 +1,3 @@
-import { FC_Barcelona } from "./fcb";
+import { fcbarcelona } from "./fcb";
 
-export { FC_Barcelona };
+export { fcbarcelona };

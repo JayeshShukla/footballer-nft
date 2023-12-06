@@ -1,3 +1,3 @@
-import { Argentina } from "./argentina";
+import { argentina } from "./argentina";
 
-export { Argentina };
+export { argentina };
