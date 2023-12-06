@@ -2,20 +2,33 @@ import React, { useState, useEffect } from "react";
 import { PlayerCard } from "../reusable/PlayerCard";
 import { getSearchResults } from "../utility/algoliaAPI";
 
-const FirstTimer = ({ firstTimer, contract, publicAddress, wallet }) => {
+const FirstTimer = ({
+  firstTimer,
+  contract,
+  publicAddress,
+  wallet,
+  setLoader,
+  setToastNumber,
+  toastNumber,
+}) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
 
   const handleSearch = async () => {
-    const searchResult = await getSearchResults(searchTerm);
-    if (searchResult) {
-      setResults(searchResult);
-    } else {
-      setResults([]);
+    try {
+      const searchResult = await getSearchResults(searchTerm);
+      if (searchResult) {
+        setResults(searchResult);
+      } else {
+        setResults([]);
+      }
+    } finally {
+      setLoader(false);
     }
   };
 
   useEffect(() => {
+    setLoader(true);
     handleSearch();
   }, [searchTerm]);
 
@@ -43,6 +56,8 @@ const FirstTimer = ({ firstTimer, contract, publicAddress, wallet }) => {
             contract={contract}
             publicAddress={publicAddress}
             wallet={wallet}
+            setLoader={setLoader}
+            setToastNumber={setToastNumber}
           />
         ))}
       </div>

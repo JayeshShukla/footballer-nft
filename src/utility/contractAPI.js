@@ -81,7 +81,15 @@ export const getNFTCountPerAddress = async (contract, publicAddress) => {
   }
 };
 
-export const addFirstNFT = async (item, wallet, contract, publicAddress) => {
+export const addFirstNFT = async (
+  item,
+  wallet,
+  contract,
+  publicAddress,
+  setLoader,
+  setToastNumber
+) => {
+  setLoader(true);
   try {
     const provider = new ethers.providers.Web3Provider(wallet);
     const {
@@ -95,7 +103,6 @@ export const addFirstNFT = async (item, wallet, contract, publicAddress) => {
       description,
       club,
     } = item;
-
     const nftURI = await firstNFT(objectID);
     const signer = provider.getSigner();
     if (nftURI && contract && contract.safeMint && contract.connect) {
@@ -109,11 +116,24 @@ export const addFirstNFT = async (item, wallet, contract, publicAddress) => {
         club,
         description
       );
-      console.log("Response:", response);
+      const receipt = await response.wait();
+      const nftMintedEvent = receipt.events.find(
+        (event) => event.event === "NFTMinted"
+      );
+      if (nftMintedEvent) {
+        const { owner, objectID } = nftMintedEvent.args;
+        if (!objectID.toNumber()) {
+          setToastNumber(1);
+        } else {
+          setToastNumber(2);
+        }
+      }
     } else {
       console.error("Invalid contract or missing methods.");
     }
   } catch (error) {
     console.error("Error:", error);
+  } finally {
+    setLoader(false);
   }
 };

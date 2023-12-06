@@ -1,5 +1,10 @@
 import React from "react";
 
 export const NFTCard = ({ item, i }) => {
-  return <div>NFTCard</div>;
+  const { image } = item;
+  return (
+    <div className="ma5 flex" key={i} style={{ width: "fit-content" }}>
+      <img src={image.originalUrl} className="self-start" />
+    </div>
+  );
 };
