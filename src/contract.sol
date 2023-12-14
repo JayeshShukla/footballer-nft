@@ -12,6 +12,7 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
     mapping(uint256 => uint) public tokensLevel;
     mapping(address => uint256[50]) public tokensPerAddress;
     mapping(address => uint256[]) public userTokenList;
+    event NFTMinted(address indexed owner, uint256 objectID);
 
     constructor(
         address initialOwner
@@ -24,7 +25,8 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
         string memory country,
         string memory club,
         string memory description
-    ) public pure returns (string memory) {
+    ) public view returns (string memory) {
+        uint256 level = tokensLevel[tokenId];
         bytes memory dataURI = abi.encodePacked(
             "{",
             '"name": "#',
@@ -45,7 +47,10 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
             '"},',
             '{"trait_type": "Plays From Club", "value": "',
             club,
-            '"}',
+            '"},',
+            '{"trait_type": "Level", "value": ',
+            Strings.toString(level),
+            "}",
             "]",
             "}"
         );
@@ -72,6 +77,24 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
             );
     }
 
+    function supportsInterface(
+        bytes4 interfaceId
+    ) public view virtual override(ERC721, ERC721URIStorage) returns (bool) {
+        return super.supportsInterface(interfaceId);
+    }
+
+    function tokenURI(
+        uint256 tokenId
+    )
+        public
+        view
+        virtual
+        override(ERC721, ERC721URIStorage)
+        returns (string memory)
+    {
+        return super.tokenURI(tokenId);
+    }
+
     function safeMint(
         address to,
         uint256 objectId,
@@ -80,7 +103,7 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
         string memory country,
         string memory club,
         string memory description
-    ) public returns (bool) {
+    ) public {
         if (tokensPerAddress[to][objectId] == 0) {
             uint256 tokenId = ++_nextTokenId;
             tokensPerAddress[to][objectId] = tokenId;
@@ -97,10 +120,34 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
             );
             _safeMint(to, tokenId);
             _setTokenURI(tokenId, dynamicTokenURI);
-            return true;
+            emit NFTMinted(to, objectId);
         } else {
-            return false;
+            emit NFTMinted(to, 0);
         }
+    }
+
+    function updateTokenURI(
+        address to,
+        uint256 objectId,
+        string memory nftURI,
+        string memory jerseyNo,
+        string memory country,
+        string memory club,
+        string memory description
+    ) public {
+        uint256 tokenId = tokensPerAddress[to][objectId];
+        tokensLevel[tokenId]++;
+        string memory upgradedNFT = addNFTUrl(nftURI);
+        string memory dynamicTokenURI = createTokenURI(
+            tokenId,
+            jerseyNo,
+            upgradedNFT,
+            country,
+            club,
+            description
+        );
+        _setTokenURI(tokenId, dynamicTokenURI);
+        emit NFTMinted(to, objectId);
     }
 
     function usersTotalToken(address to) public view returns (uint256) {
@@ -112,17 +159,5 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
         tokensLevel[destroyTokenId] = 0;
         tokensPerAddress[owner][objectId] = 0;
         _burn(destroyTokenId);
-    }
-
-    function tokenURI(
-        uint256 tokenId
-    ) public view override(ERC721, ERC721URIStorage) returns (string memory) {
-        return super.tokenURI(tokenId);
-    }
-
-    function supportsInterface(
-        bytes4 interfaceId
-    ) public view override(ERC721, ERC721URIStorage) returns (bool) {
-        return super.supportsInterface(interfaceId);
     }
 }

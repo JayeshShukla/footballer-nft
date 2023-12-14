@@ -33,33 +33,38 @@ const FirstTimer = ({
   }, [searchTerm]);
 
   return (
-    <div className="bg-green flex flex-column items-center">
-      <div className="f1">
-        Hi Champ 👋.
-        <p className="f3">Search Your Favourite Footballer</p>
-      </div>
-      <div className="bg-blue w-75 w-55-ns w-50-l">
-        <input
-          className="f4 w-100"
-          type="text"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
-      <div className="bg-black vh-75 w-100 flex flex-wrap pa5 justify-center items-center overflow-y-scroll">
-        {results.map((item, i) => (
-          <PlayerCard
-            key={item.objectID}
-            item={item}
-            i={i}
-            firstTimer={firstTimer}
-            contract={contract}
-            publicAddress={publicAddress}
-            wallet={wallet}
-            setLoader={setLoader}
-            setToastNumber={setToastNumber}
+    <div>
+      <div
+        className="bg-green flex flex-column items-center"
+        style={{ color: "white" }}
+      >
+        <div className="f1">
+          Hi Champ 👋.
+          <p className="f3">Search Your Favourite Footballer</p>
+        </div>
+        <div className="bg-blue w-75 w-55-ns w-50-l">
+          <input
+            className="f4 w-100"
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
-        ))}
+        </div>
+        <div className="bg-black w-100 flex flex-wrap pa5 justify-center items-center">
+          {results.map((item, i) => (
+            <PlayerCard
+              key={item.objectID}
+              item={item}
+              i={i}
+              firstTimer={firstTimer}
+              contract={contract}
+              publicAddress={publicAddress}
+              wallet={wallet}
+              setLoader={setLoader}
+              setToastNumber={setToastNumber}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

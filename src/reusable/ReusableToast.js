@@ -32,6 +32,12 @@ const Toast = ({ toastNumber }) => {
         position: toast.POSITION.TOP_CENTER,
         className: "foo-bar",
       });
+
+    toastNumber === 3 &&
+      toast("OVR bracket same, Try agian !", {
+        position: toast.POSITION.TOP_CENTER,
+        className: "foo-bar",
+      });
   };
 
   useEffect(() => {

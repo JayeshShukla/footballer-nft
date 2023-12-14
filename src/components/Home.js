@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { fetchUsersNFT } from "../utility/alchemyAPI";
 import { NFTCard } from "../reusable/NFTCard";
+import styles from "../reusable/index.module.css";
 
-export const Home = ({ publicAddress, setLoader }) => {
+export const Home = ({
+  publicAddress,
+  setLoader,
+  wallet,
+  contract,
+  setToastNumber,
+}) => {
   const [addressToFetch, setAddressToFetch] = useState(publicAddress);
   const [nftList, setNFTList] = useState([]);
   const [totalNFT, setTotalNFT] = useState(0);
@@ -22,44 +29,25 @@ export const Home = ({ publicAddress, setLoader }) => {
   }, [addressToFetch]);
 
   return (
-    <>
-      <div>total NFT's Found : {totalNFT}</div>
-      <div
-        className="overflow-x-auto"
-        style={{
-          display: "-webkit-inline-box",
-          scrollbarWidth: "thin",
-          msOverflowStyle: "none",
-        }}
-      >
-        {/* {totalNFT ? (
-          nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)
+    <div className={`${styles.mainDiv}`}>
+      <div style={{ color: "white" }}>total NFT's Found : {totalNFT}</div>
+      <div className={`${styles.container}`}>
+        {totalNFT ? (
+          nftList &&
+          nftList.map((item, i) => (
+            <NFTCard
+              item={item}
+              i={i}
+              wallet={wallet}
+              contract={contract}
+              setToastNumber={setToastNumber}
+            />
+          ))
         ) : (
           <div>No NFT Found</div>
-        )}*/}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
-        {nftList && nftList.map((item, i) => <NFTCard item={item} i={i} />)}
+        )}
       </div>
-    </>
+    </div>
   );
 };
 

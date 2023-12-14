@@ -1,5 +1,5 @@
 import PlayersList from "../asset/players.json";
-import { generateGoldSvg } from "../asset/customCard";
+import { generateGoldSvg } from "../asset/goldSvg";
 import { fcbarcelona } from "../svg-images/clubs/index";
 import { argentina } from "../svg-images/flags/index";
 
@@ -79,4 +79,43 @@ export const firstNFT = async (objectID) => {
     OVR
   );
   return stringFormatImage;
+};
+
+export const isLevelUpgradable = (stats, currentLevel) => {
+  const { PAC, SHO, PAS, DRI, DEF, PHY } = stats;
+  const OVR = (PAC + SHO + PAS + DRI + DEF + PHY) / 6;
+  console.log(OVR, currentLevel);
+  if (OVR <= 33) {
+    return currentLevel === 1
+      ? 0
+      : currentLevel === 2
+      ? -1
+      : currentLevel === 3
+      ? -2
+      : -3;
+  } else if (33 < OVR && OVR <= 66) {
+    return currentLevel === 1
+      ? 1
+      : currentLevel === 2
+      ? 0
+      : currentLevel === 3
+      ? -1
+      : -2;
+  } else if (66 < OVR && OVR <= 99) {
+    return currentLevel === 1
+      ? 2
+      : currentLevel === 2
+      ? 1
+      : currentLevel === 3
+      ? 0
+      : -1;
+  } else {
+    return currentLevel === 1
+      ? 3
+      : currentLevel === 2
+      ? 2
+      : currentLevel === 3
+      ? 1
+      : 0;
+  }
 };

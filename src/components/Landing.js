@@ -33,7 +33,13 @@ const Landing = ({ wallet, contract, setLoader, publicAddress }) => {
           setToastNumber={setToastNumber}
         />
       ) : (
-        <Home publicAddress={publicAddress} setLoader={setLoader} />
+        <Home
+          publicAddress={publicAddress}
+          setLoader={setLoader}
+          contract={contract}
+          wallet={wallet}
+          setToastNumber={setToastNumber}
+        />
       )}
       <Toast toastNumber={toastNumber} />
     </div>
