@@ -143,6 +143,12 @@ export const upgradeNFT = async (stats, wallet, contract, currentLevel) => {
   if (levelIncrement === 0) {
     return Promise.resolve(0);
   } else {
-    console.log(levelIncrement);
+    // address to,
+    //     uint256 objectId,
+    //     string memory nftURI,
+    //     string memory jerseyNo,
+    //     string memory country,
+    //     string memory club,
+    //     string memory description
   }
 };
