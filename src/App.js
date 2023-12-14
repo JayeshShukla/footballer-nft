@@ -36,7 +36,7 @@ function App() {
   }, [setupDone]);
 
   return (
-    <div className="App vh-100 pt4">
+    <div className="App">
       {loader && <ReusableLoader />}
       {setupDone ? (
         <Landing

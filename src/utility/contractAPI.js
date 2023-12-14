@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import contractDetails from "../asset/contractDetails.json";
-import { firstNFT } from "./cardMiddleware";
+import { firstNFT, isLevelUpgradable } from "./cardMiddleware";
 
 export const checkWallet = async () => {
   try {
@@ -135,5 +135,20 @@ export const addFirstNFT = async (
     console.error("Error:", error);
   } finally {
     setLoader(false);
+  }
+};
+
+export const upgradeNFT = async (stats, wallet, contract, currentLevel) => {
+  const levelIncrement = isLevelUpgradable(stats, currentLevel);
+  if (levelIncrement === 0) {
+    return Promise.resolve(0);
+  } else {
+    // address to,
+    //     uint256 objectId,
+    //     string memory nftURI,
+    //     string memory jerseyNo,
+    //     string memory country,
+    //     string memory club,
+    //     string memory description
   }
 };

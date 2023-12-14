@@ -1,5 +1,5 @@
 {
-  "daiAddress": "0x627F1C6ac5E6dB78e4B1B373cc6d4a25C5A0FCC3",
+  "daiAddress": "0xA0C2554FAf18E44416EbF6b9CEf8dDC11D9C7b11",
   "daiAbi": [
     {
       "inputs": [
@@ -397,7 +397,7 @@
           "type": "string"
         }
       ],
-      "stateMutability": "pure",
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -733,6 +733,49 @@
         }
       ],
       "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "objectId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "nftURI",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "jerseyNo",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "country",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "club",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "description",
+          "type": "string"
+        }
+      ],
+      "name": "updateTokenURI",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
