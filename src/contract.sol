@@ -20,6 +20,7 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
 
     function createTokenURI(
         uint256 tokenId,
+        uint256 objectId,
         string memory jerseyNo,
         string memory nftURI,
         string memory country,
@@ -27,6 +28,7 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
         string memory description
     ) public view returns (string memory) {
         uint256 level = tokensLevel[tokenId];
+        uint256 objectIdValue = objectId;
         bytes memory dataURI = abi.encodePacked(
             "{",
             '"name": "#',
@@ -50,6 +52,9 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
             '"},',
             '{"trait_type": "Level", "value": ',
             Strings.toString(level),
+            "},",
+            '{"trait_type": "objectId", "value": ',
+            Strings.toString(objectIdValue),
             "}",
             "]",
             "}"
@@ -112,6 +117,7 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
             string memory addedNFT = addNFTUrl(nftURI);
             string memory dynamicTokenURI = createTokenURI(
                 tokenId,
+                objectId,
                 jerseyNo,
                 addedNFT,
                 country,
@@ -129,6 +135,7 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
     function updateTokenURI(
         address to,
         uint256 objectId,
+        uint256 updatedLevel,
         string memory nftURI,
         string memory jerseyNo,
         string memory country,
@@ -136,10 +143,11 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
         string memory description
     ) public {
         uint256 tokenId = tokensPerAddress[to][objectId];
-        tokensLevel[tokenId]++;
+        tokensLevel[tokenId] = updatedLevel;
         string memory upgradedNFT = addNFTUrl(nftURI);
         string memory dynamicTokenURI = createTokenURI(
             tokenId,
+            objectId,
             jerseyNo,
             upgradedNFT,
             country,

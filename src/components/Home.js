@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchUsersNFT } from "../utility/alchemyAPI";
 import { NFTCard } from "../reusable/NFTCard";
 import styles from "../reusable/index.module.css";
+import { Navbar } from "./Navbar";
 
 export const Home = ({
   publicAddress,
@@ -29,8 +30,9 @@ export const Home = ({
   }, [addressToFetch]);
 
   return (
-    <div className={`${styles.mainDiv}`}>
-      <div style={{ color: "white" }}>total NFT's Found : {totalNFT}</div>
+    <div className="bg-black">
+      <Navbar />
+      <div style={{ color: "black" }}>total NFT's Found : {totalNFT}</div>
       <div className={`${styles.container}`}>
         {totalNFT ? (
           nftList &&

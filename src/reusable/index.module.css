@@ -1,19 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:200,300,400,500,600,700,800,900& display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:200,300,400,500,600,700,800,900& display=swap"); */
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-}
+} */
 
-.mainDiv {
+/* .mainDiv {
   display: flex;
   min-height: 100vh;
   background: #161623;
-}
+} */
 
-.mainDiv::before {
+/* .mainDiv::before {
   content: "";
   position: absolute;
   top: 0;
@@ -22,9 +22,9 @@
   height: 100%;
   background: linear-gradient(#f00, #f0f);
   clip-path: circle(30% at right 70%);
-}
+} */
 
-.mainDiv::after {
+/* .mainDiv::after {
   content: "";
   position: absolute;
   top: 0;
@@ -33,7 +33,7 @@
   height: 100%;
   background: linear-gradient(#2196f3, #e91e63);
   clip-path: circle(20% at 10% 10%);
-}
+} */
 
 .container {
   position: relative;
@@ -141,11 +141,11 @@
 
 .container .card .content h2 {
   position: absolute;
-  top: -150px;
+  top: -250px;
   right: 15px;
   font-size: 8em;
-  color: rgba(255, 255, 255, 0.05);
-  pointer-events: none;
+  /* color: rgba(255, 255, 255, 0.05); */
+  color: black;
 }
 
 .container .card .content h3 {
@@ -159,7 +159,6 @@
   position: relative;
   display: inline-block;
   padding: 8px 20px;
-  margin-top: 50px;
   background: black;
   color: #a9a9a9;
   border-radius: 20px;
