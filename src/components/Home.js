@@ -19,9 +19,7 @@ export const Home = ({
     const { ownedNfts, totalCount } = await fetchUsersNFT(addressToFetch);
     setNFTList(ownedNfts);
     setTotalNFT(totalCount);
-    if (!totalCount == 0) {
-      setLoader(false);
-    }
+    setLoader(false);
   };
 
   useEffect(() => {
@@ -31,8 +29,13 @@ export const Home = ({
 
   return (
     <div className="bg-black">
-      <Navbar />
-      <div style={{ color: "black" }}>total NFT's Found : {totalNFT}</div>
+      <Navbar
+        setAddressToFetch={setAddressToFetch}
+        addressToFetch={addressToFetch}
+      />
+      {totalNFT && (
+        <div style={{ color: "yellow" }}>total NFT's Found : {totalNFT}</div>
+      )}
       <div className={`${styles.container}`}>
         {totalNFT ? (
           nftList &&
@@ -46,7 +49,7 @@ export const Home = ({
             />
           ))
         ) : (
-          <div>No NFT Found</div>
+          <div className="black bg-yellow pa5">No NFT found !</div>
         )}
       </div>
     </div>

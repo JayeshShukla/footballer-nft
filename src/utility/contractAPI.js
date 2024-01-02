@@ -140,6 +140,7 @@ export const addFirstNFT = async (
 
 export const upgradeNFT = async (stats, wallet, contract, currentLevel) => {
   const levelIncrement = isLevelUpgradable(stats, currentLevel);
+  console.log(levelIncrement);
   if (levelIncrement === 0) {
     return Promise.resolve(0);
   } else {

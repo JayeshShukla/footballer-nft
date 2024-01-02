@@ -83,8 +83,16 @@ export const firstNFT = async (objectID) => {
 
 export const isLevelUpgradable = (stats, currentLevel) => {
   const { PAC, SHO, PAS, DRI, DEF, PHY } = stats;
-  const OVR = (PAC + SHO + PAS + DRI + DEF + PHY) / 6;
-  console.log(OVR, currentLevel);
+  const OVR = Math.round(
+    (parseInt(PAC) +
+      parseInt(SHO) +
+      parseInt(PAS) +
+      parseInt(DRI) +
+      parseInt(DEF) +
+      parseInt(PHY)) /
+      6
+  );
+
   if (OVR <= 33) {
     return currentLevel === 1
       ? 0

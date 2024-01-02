@@ -7,12 +7,12 @@ export const NFTCard = ({ item, i, wallet, contract, setToastNumber }) => {
   const tiltRef = useRef();
   const [upgrade, setUpgrade] = useState(false);
   const [stats, setStats] = useState({
-    PAC: 0,
-    SHO: 0,
-    PAS: 0,
-    DRI: 0,
-    DEF: 0,
-    PHY: 0,
+    PAC: null,
+    SHO: null,
+    PAS: null,
+    DRI: null,
+    DEF: null,
+    PHY: null,
   });
   const {
     image,
@@ -24,37 +24,45 @@ export const NFTCard = ({ item, i, wallet, contract, setToastNumber }) => {
   const [currentLevel, setCurrentLevel] = useState(attributes[3]?.value);
 
   useEffect(() => {
-    // Initialize VanillaTilt on component mount
-    VanillaTilt.init(tiltRef.current, {
-      max: 25,
-      speed: 400,
-      glare: true,
-      "max-glare": 0.5,
-    });
+    const tiltElement = tiltRef.current;
 
-    // Clean up VanillaTilt on component unmount
-    return () => {
-      tiltRef.current.vanillaTilt.destroy();
-    };
+    if (tiltElement) {
+      VanillaTilt.init(tiltElement, {
+        max: 25,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.5,
+      });
+
+      return () => {
+        if (tiltRef.current && tiltRef.current.vanillaTilt) {
+          tiltRef.current.vanillaTilt.destroy();
+        }
+      };
+    }
   }, []);
 
   const handleUpgrade = (e) => {
     const { name, value } = e.target;
-    setStats((prevData) => ({ ...prevData, [name]: parseInt(value, 10) }));
+    if (value == "0" || parseInt(value) > 100 || isNaN(value)) {
+      return;
+    }
+    setStats((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const resetStats = () => {
     setStats({
-      PAC: 0,
-      SHO: 0,
-      PAS: 0,
-      DRI: 0,
-      DEF: 0,
-      PHY: 0,
+      PAC: null,
+      SHO: null,
+      PAS: null,
+      DRI: null,
+      DEF: null,
+      PHY: null,
     });
     setUpgrade(false);
   };
   const checkStats = async () => {
+    console.log(stats);
     if (
       !stats.PAC ||
       !stats.SHO ||
