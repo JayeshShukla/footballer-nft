@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchUsersNFT } from "../utility/alchemyAPI";
 import { NFTCard } from "../reusable/NFTCard";
 import styles from "../reusable/index.module.css";
+import { Navbar } from "./Navbar";
 
 export const Home = ({
   publicAddress,
@@ -9,6 +10,7 @@ export const Home = ({
   wallet,
   contract,
   setToastNumber,
+  toastNumber,
 }) => {
   const [addressToFetch, setAddressToFetch] = useState(publicAddress);
   const [nftList, setNFTList] = useState([]);
@@ -18,9 +20,7 @@ export const Home = ({
     const { ownedNfts, totalCount } = await fetchUsersNFT(addressToFetch);
     setNFTList(ownedNfts);
     setTotalNFT(totalCount);
-    if (!totalCount == 0) {
-      setLoader(false);
-    }
+    setLoader(false);
   };
 
   useEffect(() => {
@@ -29,8 +29,14 @@ export const Home = ({
   }, [addressToFetch]);
 
   return (
-    <div className={`${styles.mainDiv}`}>
-      <div style={{ color: "white" }}>total NFT's Found : {totalNFT}</div>
+    <div className="bg-black">
+      <Navbar
+        setAddressToFetch={setAddressToFetch}
+        addressToFetch={addressToFetch}
+      />
+      {totalNFT && (
+        <div style={{ color: "yellow" }}>total NFT's Found : {totalNFT}</div>
+      )}
       <div className={`${styles.container}`}>
         {totalNFT ? (
           nftList &&
@@ -41,10 +47,12 @@ export const Home = ({
               wallet={wallet}
               contract={contract}
               setToastNumber={setToastNumber}
+              publicAddress={publicAddress}
+              toastNumber={toastNumber}
             />
           ))
         ) : (
-          <div>No NFT Found</div>
+          <div className="black bg-yellow pa5">No NFT found !</div>
         )}
       </div>
     </div>

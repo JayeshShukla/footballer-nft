@@ -39,6 +39,7 @@ const Landing = ({ wallet, contract, setLoader, publicAddress }) => {
           contract={contract}
           wallet={wallet}
           setToastNumber={setToastNumber}
+          toastNumber={toastNumber}
         />
       )}
       <Toast toastNumber={toastNumber} />

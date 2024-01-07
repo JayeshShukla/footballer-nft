@@ -1,7 +1,6 @@
 // import algoliasearch from "algoliasearch/lite";
 import playersList from "../asset/players.json";
 const algoliasearch = require("algoliasearch");
-
 // Algolia configuration
 const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_APPLICATION_ID,

@@ -1,0 +1,20 @@
+.navbar {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+  padding: 10px;
+}
+
+.navbarInput {
+  width: 100%;
+  border-radius: 20px;
+  height: 30px;
+  padding-left: 15px;
+  border: 4px solid black;
+  background: linear-gradient(50deg, #ff4081, yellow);
+  -webkit-background-clip: text;
+  color: transparent;
+  max-width: 500px;
+  font-size: 14px;
+  outline: none;
+}

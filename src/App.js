@@ -1,9 +1,11 @@
 import "./App.css";
+import styles from "./App.module.css";
 import Landing from "./components/Landing";
 import { useEffect, useState } from "react";
 import { ReusableLoader } from "./reusable/ReusableLoader";
 import { checkSetup } from "./utility/contractAPI";
 import { updateAlgolia } from "./utility/algoliaAPI";
+import { EtherSvg } from "./asset/etherSvg";
 
 function App() {
   const [setupDone, setSetup] = useState(false);
@@ -46,7 +48,12 @@ function App() {
           publicAddress={publicAddress}
         />
       ) : (
-        <div>{errorText}</div>
+        <div className={`${styles.infoDisplay}`}>
+          {errorText}
+          <div style={{ width: "100px" }}>
+            <EtherSvg />
+          </div>
+        </div>
       )}
     </div>
   );

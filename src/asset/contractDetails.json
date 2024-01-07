@@ -1,5 +1,5 @@
 {
-  "daiAddress": "0xA0C2554FAf18E44416EbF6b9CEf8dDC11D9C7b11",
+  "daiAddress": "0x6bd7f8B6EafcaCEab506590c1Ad2d79f27665899",
   "daiAbi": [
     {
       "inputs": [
@@ -361,6 +361,11 @@
         {
           "internalType": "uint256",
           "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "objectId",
           "type": "uint256"
         },
         {
@@ -747,6 +752,11 @@
         {
           "internalType": "uint256",
           "name": "objectId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "updatedLevel",
           "type": "uint256"
         },
         {

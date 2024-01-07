@@ -1,5 +1,8 @@
 import PlayersList from "../asset/players.json";
 import { generateGoldSvg } from "../asset/goldSvg";
+import { generateOrangeSvg } from "../asset/orangeSvg";
+import { generateBlueSvg } from "../asset/blueSvg";
+import { generateFinalSvg } from "../asset/finalSvg";
 import { fcbarcelona } from "../svg-images/clubs/index";
 import { argentina } from "../svg-images/flags/index";
 
@@ -83,8 +86,16 @@ export const firstNFT = async (objectID) => {
 
 export const isLevelUpgradable = (stats, currentLevel) => {
   const { PAC, SHO, PAS, DRI, DEF, PHY } = stats;
-  const OVR = (PAC + SHO + PAS + DRI + DEF + PHY) / 6;
-  console.log(OVR, currentLevel);
+  const OVR = Math.round(
+    (parseInt(PAC) +
+      parseInt(SHO) +
+      parseInt(PAS) +
+      parseInt(DRI) +
+      parseInt(DEF) +
+      parseInt(PHY)) /
+      6
+  );
+
   if (OVR <= 33) {
     return currentLevel === 1
       ? 0
@@ -118,4 +129,67 @@ export const isLevelUpgradable = (stats, currentLevel) => {
       ? 1
       : 0;
   }
+};
+
+export const getUpgradedNFT = (updatedLevel, stats, objectID) => {
+  let nftURI;
+  const { PAC, SHO, PAS, DRI, DEF, PHY } = stats;
+  const OVR = Math.round(
+    (parseInt(PAC) +
+      parseInt(SHO) +
+      parseInt(PAS) +
+      parseInt(DRI) +
+      parseInt(DEF) +
+      parseInt(PHY)) /
+      6
+  );
+  let { firstname, lastname, club, country } = PlayersList[objectID - 1];
+  let clubSvg = fetchClub(club);
+  let countrySvg = fetchCountry(country);
+  if (updatedLevel === 1) {
+    nftURI = generateGoldSvg(
+      firstname,
+      lastname,
+      clubSvg,
+      countrySvg,
+      PAC,
+      DRI,
+      SHO,
+      DEF,
+      PAS,
+      PHY,
+      OVR
+    );
+  } else if (updatedLevel === 2) {
+    nftURI = generateBlueSvg(
+      firstname,
+      lastname,
+      clubSvg,
+      countrySvg,
+      PAC,
+      DRI,
+      SHO,
+      DEF,
+      PAS,
+      PHY,
+      OVR
+    );
+  } else if (updatedLevel === 3) {
+    nftURI = generateOrangeSvg(
+      firstname,
+      lastname,
+      clubSvg,
+      countrySvg,
+      PAC,
+      DRI,
+      SHO,
+      DEF,
+      PAS,
+      PHY,
+      OVR
+    );
+  } else {
+    nftURI = generateFinalSvg(firstname, lastname, clubSvg, countrySvg);
+  }
+  return nftURI;
 };
