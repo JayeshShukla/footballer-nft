@@ -142,20 +142,24 @@ contract FootballerNFT is ERC721, Ownable, ERC721URIStorage {
         string memory club,
         string memory description
     ) public {
-        uint256 tokenId = tokensPerAddress[to][objectId];
-        tokensLevel[tokenId] = updatedLevel;
-        string memory upgradedNFT = addNFTUrl(nftURI);
-        string memory dynamicTokenURI = createTokenURI(
-            tokenId,
-            objectId,
-            jerseyNo,
-            upgradedNFT,
-            country,
-            club,
-            description
-        );
-        _setTokenURI(tokenId, dynamicTokenURI);
-        emit NFTMinted(to, objectId);
+        if (tokensPerAddress[to][objectId] != 0) {
+            uint256 tokenId = tokensPerAddress[to][objectId];
+            tokensLevel[tokenId] = updatedLevel;
+            string memory upgradedNFT = addNFTUrl(nftURI);
+            string memory dynamicTokenURI = createTokenURI(
+                tokenId,
+                objectId,
+                jerseyNo,
+                upgradedNFT,
+                country,
+                club,
+                description
+            );
+            _setTokenURI(tokenId, dynamicTokenURI);
+            emit NFTMinted(to, objectId);
+        } else {
+            emit NFTMinted(to, 0);
+        }
     }
 
     function usersTotalToken(address to) public view returns (uint256) {

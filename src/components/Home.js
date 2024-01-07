@@ -10,6 +10,7 @@ export const Home = ({
   wallet,
   contract,
   setToastNumber,
+  toastNumber,
 }) => {
   const [addressToFetch, setAddressToFetch] = useState(publicAddress);
   const [nftList, setNFTList] = useState([]);
@@ -46,6 +47,8 @@ export const Home = ({
               wallet={wallet}
               contract={contract}
               setToastNumber={setToastNumber}
+              publicAddress={publicAddress}
+              toastNumber={toastNumber}
             />
           ))
         ) : (

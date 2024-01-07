@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loader from "react-js-loader";
 
-export const ReusableLoader = () => {
+export const ReusableLoader = ({ cardLoader }) => {
   const [bgColor, setBgColor] = useState("#fffff");
 
   useEffect(() => {
@@ -27,8 +27,8 @@ export const ReusableLoader = () => {
         position: "fixed",
         top: 0,
         left: 0,
-        width: "100vw",
-        height: "100vh",
+        width: "100%",
+        height: cardLoader ? "100%" : "100vh",
         backdropFilter: "blur(3px)",
         background: "transparent",
         display: "flex",

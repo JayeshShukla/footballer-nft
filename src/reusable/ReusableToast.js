@@ -4,12 +4,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Toast = ({ toastNumber }) => {
   const notify = () => {
-    // toast("Default Notification !");
-
-    // toast.success("Success Notification !", {
-    //   position: toast.POSITION.TOP_CENTER,
-    // });
-
     toastNumber === 1 &&
       toast.error(
         `You already own this card.
@@ -19,14 +13,6 @@ const Toast = ({ toastNumber }) => {
         }
       );
 
-    // toast.warn("Warning Notification !", {
-    //   position: toast.POSITION.BOTTOM_LEFT,
-    // });
-
-    // toast.info("Info Notification !", {
-    //   position: toast.POSITION.BOTTOM_CENTER,
-    // });
-
     toastNumber === 2 &&
       toast("Card minted with ❤️ !", {
         position: toast.POSITION.TOP_CENTER,
@@ -34,7 +20,20 @@ const Toast = ({ toastNumber }) => {
       });
 
     toastNumber === 3 &&
-      toast("OVR bracket same, Try agian !", {
+      toast(
+        <div>
+          Card updated with ❤️.
+          <br />
+          Changes will reflect shortly. Thanks for being patient.
+        </div>,
+        {
+          position: toast.POSITION.TOP_CENTER,
+          className: "foo-bar",
+        }
+      );
+
+    toastNumber >= 4 &&
+      toast("Average of Card is still the same, TRY AGAIN !!!", {
         position: toast.POSITION.TOP_CENTER,
         className: "foo-bar",
       });

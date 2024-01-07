@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import contractDetails from "../asset/contractDetails.json";
-import { firstNFT, isLevelUpgradable } from "./cardMiddleware";
+import { firstNFT, isLevelUpgradable, getUpgradedNFT } from "./cardMiddleware";
 
 export const checkWallet = async () => {
   try {
@@ -138,18 +138,54 @@ export const addFirstNFT = async (
   }
 };
 
-export const upgradeNFT = async (stats, wallet, contract, currentLevel) => {
+export const upgradeNFT = async (
+  stats,
+  wallet,
+  contract,
+  currentLevel,
+  attributes,
+  description,
+  publicAddress
+) => {
   const levelIncrement = isLevelUpgradable(stats, currentLevel);
-  console.log(levelIncrement);
   if (levelIncrement === 0) {
     return Promise.resolve(0);
   } else {
-    // address to,
-    //     uint256 objectId,
-    //     string memory nftURI,
-    //     string memory jerseyNo,
-    //     string memory country,
-    //     string memory club,
-    //     string memory description
+    let objectID = attributes[4].value;
+    let updatedLevel = currentLevel + levelIncrement;
+    let jerseyNo = attributes[1].value;
+    let country = attributes[0].value;
+    let club = attributes[2].value;
+    let nftURI = getUpgradedNFT(updatedLevel, stats, objectID);
+    console.log(nftURI);
+    const provider = new ethers.providers.Web3Provider(wallet);
+    const signer = provider.getSigner();
+    if (contract && contract.updateTokenURI && contract.connect) {
+      const connectedContract = contract.connect(signer);
+      const response = await connectedContract.updateTokenURI(
+        publicAddress,
+        objectID,
+        updatedLevel,
+        nftURI,
+        jerseyNo,
+        country,
+        club,
+        description
+      );
+      const receipt = await response.wait();
+      const nftMintedEvent = receipt.events.find(
+        (event) => event.event === "NFTMinted"
+      );
+      if (nftMintedEvent) {
+        const { owner, objectID } = nftMintedEvent.args;
+        // console.log(owner, objectID);
+        console.log(objectID.toNumber());
+        if (!objectID.toNumber()) {
+          // setToastNumber(1);
+        } else {
+          // setToastNumber(2);
+        }
+      }
+    }
   }
 };
