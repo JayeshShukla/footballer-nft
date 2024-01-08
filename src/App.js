@@ -19,7 +19,6 @@ function App() {
 
   const handleCheck = async () => {
     const { publicAddress, contract, wallet } = await checkSetup();
-    // console.log(publicAddress, contract, wallet);
     if (publicAddress && contract && wallet) {
       setSetup(true);
       setContract(contract);

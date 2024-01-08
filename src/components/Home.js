@@ -3,6 +3,7 @@ import { fetchUsersNFT } from "../utility/alchemyAPI";
 import { NFTCard } from "../reusable/NFTCard";
 import styles from "../reusable/index.module.css";
 import { Navbar } from "./Navbar";
+import FirstTimer from "./FirstTimer";
 
 export const Home = ({
   publicAddress,
@@ -15,6 +16,7 @@ export const Home = ({
   const [addressToFetch, setAddressToFetch] = useState(publicAddress);
   const [nftList, setNFTList] = useState([]);
   const [totalNFT, setTotalNFT] = useState(0);
+  const [buyNFTClicked, setBuyNFTClicked] = useState(false);
 
   const fetchNFTList = async () => {
     const { ownedNfts, totalCount } = await fetchUsersNFT(addressToFetch);
@@ -29,32 +31,51 @@ export const Home = ({
   }, [addressToFetch]);
 
   return (
-    <div className="bg-black">
+    <div>
       <Navbar
         setAddressToFetch={setAddressToFetch}
         addressToFetch={addressToFetch}
+        setBuyNFTClicked={setBuyNFTClicked}
+        buyNFTClicked={buyNFTClicked}
       />
-      {totalNFT && (
-        <div style={{ color: "yellow" }}>total NFT's Found : {totalNFT}</div>
+      {buyNFTClicked ? (
+        <FirstTimer
+          firstTimer={true}
+          contract={contract}
+          publicAddress={publicAddress}
+          wallet={wallet}
+          setLoader={setLoader}
+          setToastNumber={setToastNumber}
+          nftList={nftList}
+          addressToFetch={addressToFetch}
+        />
+      ) : (
+        <>
+          {totalNFT && (
+            <div style={{ color: "yellow" }}>
+              total NFT's Found : {totalNFT}
+            </div>
+          )}
+          <div className={`${styles.container}`}>
+            {totalNFT ? (
+              nftList &&
+              nftList.map((item, i) => (
+                <NFTCard
+                  item={item}
+                  i={i}
+                  wallet={wallet}
+                  contract={contract}
+                  setToastNumber={setToastNumber}
+                  publicAddress={publicAddress}
+                  toastNumber={toastNumber}
+                />
+              ))
+            ) : (
+              <div className="black bg-yellow pa5">No NFT found !</div>
+            )}
+          </div>
+        </>
       )}
-      <div className={`${styles.container}`}>
-        {totalNFT ? (
-          nftList &&
-          nftList.map((item, i) => (
-            <NFTCard
-              item={item}
-              i={i}
-              wallet={wallet}
-              contract={contract}
-              setToastNumber={setToastNumber}
-              publicAddress={publicAddress}
-              toastNumber={toastNumber}
-            />
-          ))
-        ) : (
-          <div className="black bg-yellow pa5">No NFT found !</div>
-        )}
-      </div>
     </div>
   );
 };

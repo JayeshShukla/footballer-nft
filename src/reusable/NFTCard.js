@@ -12,6 +12,7 @@ export const NFTCard = ({
   setToastNumber,
   publicAddress,
   toastNumber,
+  setOwnedNFT,
 }) => {
   const tiltRef = useRef();
   const [cardLoader, setCardLoader] = useState(false);
@@ -119,7 +120,6 @@ export const NFTCard = ({
             <ReusableLoader cardLoader={cardLoader} />
           ) : (
             <>
-              {" "}
               <div className="flex items-center mb1">
                 <div className={`w-30 ${styles.attributeName}`}>PAC :</div>
                 <div className="w-70">

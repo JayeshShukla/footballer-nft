@@ -1,5 +1,6 @@
 import React from "react";
 import { addFirstNFT } from "../utility/contractAPI";
+import styles from "./index.module.css";
 
 export const PlayerCard = ({
   item,
@@ -10,29 +11,20 @@ export const PlayerCard = ({
   wallet,
   setLoader,
   setToastNumber,
+  isNFT,
 }) => {
   return (
-    <div
-      className="white-90 bg-yellow pointer w-100 w-40-m w-30-ns w-20-l h5 mb5 mb3-m ma4-ns"
-      key={i}
-    >
-      <div className="w-100  h-100">
-        <div className="w-100 bg-green">
-          <img className="h-100" src={item.image} />
-        </div>
-        <div className="w-100 h3 bg-red">
-          <p className="ma0">
-            {item.firstname}
-            <strong className="f3">{` ${item.lastname} (${item.jerseyNo})`}</strong>
-            {item.country}
-          </p>
-        </div>
-      </div>
-      <div className="w-100">
+    <div>
+      <div className={`${styles.playerCard}`}>
+        <img src={item.image} className={`${styles.playerImage}`} />
+        <p className={`f4 black ${styles.playerName}`}>
+          {item.firstname}
+          <b> {item.lastname}</b>
+        </p>
         <button
-          className="w-100 pointer"
+          className={`${isNFT ? styles.alreadyOwnedButton : styles.mintButton}`}
           onClick={() =>
-            firstTimer &&
+            !isNFT &&
             addFirstNFT(
               item,
               wallet,
@@ -43,7 +35,7 @@ export const PlayerCard = ({
             )
           }
         >
-          {firstTimer ? `Mint NFT(${item.price})` : `Upgrade NFT`}
+          {isNFT ? "already owned" : "Mint"}
         </button>
       </div>
     </div>
