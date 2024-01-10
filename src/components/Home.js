@@ -50,7 +50,7 @@ export const Home = ({
           addressToFetch={addressToFetch}
         />
       ) : (
-        <>
+        <div className="bg-yellow">
           {totalNFT && (
             <div style={{ color: "yellow" }}>
               total NFT's Found : {totalNFT}
@@ -74,7 +74,7 @@ export const Home = ({
               <div className="black bg-yellow pa5">No NFT found !</div>
             )}
           </div>
-        </>
+        </div>
       )}
     </div>
   );

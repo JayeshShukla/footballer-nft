@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { PlayerCard } from "../reusable/PlayerCard";
 import { getSearchResults } from "../utility/algoliaAPI";
 import styles from "./FirstTimer.module.css";
+import { Thumbsdown } from "../asset/thumbsDown";
 
 const FirstTimer = ({
   firstTimer,
@@ -38,7 +39,14 @@ const FirstTimer = ({
     <div className={`${styles.firsttimerDiv}`}>
       <div className={`${styles.contentDiv}`}>
         {addressToFetch.toLowerCase() !== publicAddress ? (
-          <div>test</div>
+          <div className="w-100" style={{ marginTop: "150px" }}>
+            <div className="flex justify-center">
+              <div className="w-10">
+                <Thumbsdown />
+              </div>
+            </div>
+            <div className="f3">You don't own the above public address.</div>
+          </div>
         ) : (
           <>
             <p className={`${styles.heading}`}>
