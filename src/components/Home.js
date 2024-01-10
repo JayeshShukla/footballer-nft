@@ -4,6 +4,7 @@ import { NFTCard } from "../reusable/NFTCard";
 import styles from "../reusable/index.module.css";
 import { Navbar } from "./Navbar";
 import FirstTimer from "./FirstTimer";
+import footballNFT from "../asset/footballNFT.mp4";
 
 export const Home = ({
   publicAddress,
@@ -50,29 +51,40 @@ export const Home = ({
           addressToFetch={addressToFetch}
         />
       ) : (
-        <div className="bg-yellow">
-          {totalNFT && (
-            <div style={{ color: "yellow" }}>
-              total NFT's Found : {totalNFT}
+        <div>
+          <div className={`${styles.videoDiv}`}>
+            <video src={footballNFT} autoPlay loop muted />
+            <div
+              style={{
+                position: "absolute",
+                top: 100,
+              }}
+            >
+              <div className={`${styles.container}`}>
+                {totalNFT ? (
+                  nftList &&
+                  nftList.map((item, i) => (
+                    <NFTCard
+                      item={item}
+                      i={i}
+                      wallet={wallet}
+                      contract={contract}
+                      setToastNumber={setToastNumber}
+                      publicAddress={publicAddress}
+                      toastNumber={toastNumber}
+                    />
+                  ))
+                ) : (
+                  <div className={`${styles.noNFTParent}`}>
+                    <div className={`${styles.noNFTDiv}`}>
+                      <p className={`${styles.noNFTText}`}>
+                        No NFT found associated to the above public address !
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
-          )}
-          <div className={`${styles.container}`}>
-            {totalNFT ? (
-              nftList &&
-              nftList.map((item, i) => (
-                <NFTCard
-                  item={item}
-                  i={i}
-                  wallet={wallet}
-                  contract={contract}
-                  setToastNumber={setToastNumber}
-                  publicAddress={publicAddress}
-                  toastNumber={toastNumber}
-                />
-              ))
-            ) : (
-              <div className="black bg-yellow pa5">No NFT found !</div>
-            )}
           </div>
         </div>
       )}
@@ -81,3 +93,10 @@ export const Home = ({
 };
 
 export default Home;
+{
+  /* {totalNFT && (
+                  <div style={{ color: "yellow" }}>
+                    total NFT's Found : {totalNFT}
+                  </div>
+                )} */
+}
