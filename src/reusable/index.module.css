@@ -160,6 +160,7 @@
 
 .playerImage {
   width: 230px;
+  height: 170px;
 }
 
 @keyframes shimmer {
