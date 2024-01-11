@@ -11,11 +11,12 @@
   padding: 15px;
 }
 
-/* .container > * {
-  flex: 0 0 auto;
-  margin-right: 50px;
-  margin-left: 50px;
-} */
+.cardDimension {
+  width: 200px;
+  height: 300px;
+  border-radius: 15px;
+  margin-right: 200px;
+}
 
 .container > *:last-child {
   margin-right: 0;

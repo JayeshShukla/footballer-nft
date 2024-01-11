@@ -113,7 +113,7 @@ export const NFTCard = ({
   };
 
   return (
-    <>
+    <div className={`${styles.cardDimension}`}>
       {upgrade ? (
         <div className={`${styles.editCard}`}>
           {cardLoader ? (
@@ -225,6 +225,6 @@ export const NFTCard = ({
           )}
         </div>
       )}
-    </>
+    </div>
   );
 };

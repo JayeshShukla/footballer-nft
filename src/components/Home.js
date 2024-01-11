@@ -57,7 +57,7 @@ export const Home = ({
             <div
               style={{
                 position: "absolute",
-                top: 100,
+                top: 200,
               }}
             >
               <div className={`${styles.container}`}>
@@ -93,10 +93,3 @@ export const Home = ({
 };
 
 export default Home;
-{
-  /* {totalNFT && (
-                  <div style={{ color: "yellow" }}>
-                    total NFT's Found : {totalNFT}
-                  </div>
-                )} */
-}
