@@ -72,6 +72,7 @@ export const Home = ({
                       setToastNumber={setToastNumber}
                       publicAddress={publicAddress}
                       toastNumber={toastNumber}
+                      addressToFetch={addressToFetch}
                     />
                   ))
                 ) : (

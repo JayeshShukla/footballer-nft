@@ -12,7 +12,7 @@ export const NFTCard = ({
   setToastNumber,
   publicAddress,
   toastNumber,
-  setOwnedNFT,
+  addressToFetch,
 }) => {
   const tiltRef = useRef();
   const [cardLoader, setCardLoader] = useState(false);
@@ -219,7 +219,9 @@ export const NFTCard = ({
               <div className={styles.content}>
                 <h2>{i + 1}</h2>
                 <h3>{`Level : ${currentLevel}`}</h3>
-                <a onClick={() => setUpgrade(true)}>Upgrade</a>
+                {addressToFetch.toLowerCase() !== publicAddress ? null : (
+                  <a onClick={() => setUpgrade(true)}>Upgrade</a>
+                )}
               </div>
             </>
           )}

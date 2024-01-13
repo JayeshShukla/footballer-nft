@@ -4,8 +4,6 @@ import styles from "./index.module.css";
 
 export const PlayerCard = ({
   item,
-  i,
-  firstTimer,
   contract,
   publicAddress,
   wallet,
