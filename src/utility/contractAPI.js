@@ -104,33 +104,34 @@ export const addFirstNFT = async (
       club,
     } = item;
     const nftURI = await firstNFT(objectID);
-    const signer = provider.getSigner();
-    if (nftURI && contract && contract.safeMint && contract.connect) {
-      const connectedContract = contract.connect(signer);
-      const response = await connectedContract.safeMint(
-        publicAddress,
-        objectID,
-        jerseyNo,
-        nftURI,
-        country,
-        club,
-        description
-      );
-      const receipt = await response.wait();
-      const nftMintedEvent = receipt.events.find(
-        (event) => event.event === "NFTMinted"
-      );
-      if (nftMintedEvent) {
-        const { owner, objectID } = nftMintedEvent.args;
-        if (!objectID.toNumber()) {
-          setToastNumber(1);
-        } else {
-          setToastNumber(2);
-        }
-      }
-    } else {
-      console.error("Invalid contract or missing methods.");
-    }
+    console.log(nftURI);
+    // const signer = provider.getSigner();
+    // if (nftURI && contract && contract.safeMint && contract.connect) {
+    //   const connectedContract = contract.connect(signer);
+    //   const response = await connectedContract.safeMint(
+    //     publicAddress,
+    //     objectID,
+    //     jerseyNo,
+    //     nftURI,
+    //     country,
+    //     club,
+    //     description
+    //   );
+    //   const receipt = await response.wait();
+    //   const nftMintedEvent = receipt.events.find(
+    //     (event) => event.event === "NFTMinted"
+    //   );
+    //   if (nftMintedEvent) {
+    //     const { owner, objectID } = nftMintedEvent.args;
+    //     if (!objectID.toNumber()) {
+    //       setToastNumber(1);
+    //     } else {
+    //       setToastNumber(2);
+    //     }
+    //   }
+    // } else {
+    //   console.error("Invalid contract or missing methods.");
+    // }
   } catch (error) {
     console.error("Error:", error);
   } finally {

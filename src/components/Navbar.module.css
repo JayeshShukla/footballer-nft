@@ -1,8 +1,10 @@
 .navbar {
-  background: rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   backdrop-filter: blur(10px);
   padding: 10px;
+  z-index: 1000;
+  position: fixed;
 }
 
 .navbarInput {
@@ -17,4 +19,45 @@
   max-width: 500px;
   font-size: 14px;
   outline: none;
+}
+
+.newNFTbutton {
+  height: 40px;
+  border-radius: 4px;
+  color: black;
+  background: #ffd700;
+  border: none;
+  font-size: small;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.newNFTbutton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.5)
+  );
+  transform: translateX(-100%);
+  animation: shine 2s infinite linear; /* Adjust the duration and other properties as needed */
 }

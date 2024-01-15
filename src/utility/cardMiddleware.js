@@ -3,8 +3,42 @@ import { generateGoldSvg } from "../asset/goldSvg";
 import { generateOrangeSvg } from "../asset/orangeSvg";
 import { generateBlueSvg } from "../asset/blueSvg";
 import { generateFinalSvg } from "../asset/finalSvg";
-import { fcbarcelona } from "../svg-images/clubs/index";
-import { argentina } from "../svg-images/flags/index";
+import {
+  fcbarcelona,
+  realmadrid,
+  parissaintgermain,
+  liverpool,
+  bayernmunich,
+  mancity,
+  atleticomadrid,
+  tottenham,
+  manunited,
+  chelsea,
+} from "../svg-images/clubs/index";
+
+import {
+  argentina,
+  portugal,
+  wales,
+  spain,
+  southKorea,
+  senegal,
+  scotland,
+  poland,
+  norway,
+  netherlands,
+  italy,
+  germany,
+  france,
+  england,
+  egypt,
+  croatia,
+  costaRica,
+  brazil,
+  belgium,
+  austria,
+  algeria,
+} from "../svg-images/flags/index";
 
 export const generateRandomAttributes = async (maxLimit = 100) => {
   const PAC = Math.floor(Math.random() * maxLimit) + 1;
@@ -24,15 +58,36 @@ export const fetchClub = (club) => {
     case "FCB":
       clubSvg = fcbarcelona();
       break;
-    case "club2":
-      // Do something for club2
+    case "RM":
+      clubSvg = realmadrid();
       break;
-    case "club3":
-      // Do something for club3
+    case "PSG":
+      clubSvg = parissaintgermain();
       break;
-    // Add more cases as needed
-    default:
-      // Default case if no match is found
+    case "LIV":
+      clubSvg = liverpool();
+      break;
+    case "FBM":
+      clubSvg = bayernmunich();
+      break;
+    case "MC":
+      clubSvg = mancity();
+      break;
+    case "ATM":
+      clubSvg = atleticomadrid();
+      break;
+    case "TOT":
+      clubSvg = tottenham();
+      break;
+    case "MUN":
+      clubSvg = manunited();
+      break;
+    case "CHE":
+      clubSvg = chelsea();
+      break;
+    case "ROM":
+      clubSvg = chelsea();
+      break;
       console.log(`Unknown club: ${club}`);
   }
 
@@ -45,16 +100,66 @@ export const fetchCountry = (country) => {
     case "Argentina":
       countrySvg = argentina();
       break;
-    case "club2":
-      // Do something for club2
+    case "Costa Rica":
+      countrySvg = costaRica();
       break;
-    case "club3":
-      // Do something for club3
+    case "Portugal":
+      countrySvg = portugal();
       break;
-    // Add more cases as needed
-    default:
-      // Default case if no match is found
-      console.log(`Unknown club: ${country}`);
+    case "Brazil":
+      countrySvg = brazil();
+      break;
+    case "Belgium":
+      countrySvg = belgium();
+      break;
+    case "Austria":
+      countrySvg = austria();
+      break;
+    case "Algeria":
+      countrySvg = algeria();
+      break;
+    case "Croatia":
+      countrySvg = croatia();
+      break;
+    case "Scotland":
+      countrySvg = scotland();
+      break;
+    case "Spain":
+      countrySvg = spain();
+      break;
+    case "Germany":
+      countrySvg = germany();
+      break;
+    case "South Korea":
+      countrySvg = southKorea();
+      break;
+    case "Netherlands":
+      countrySvg = netherlands();
+      break;
+    case "France":
+      countrySvg = france();
+      break;
+    case "Poland":
+      countrySvg = poland();
+      break;
+    case "Italy":
+      countrySvg = italy();
+      break;
+    case "Wales":
+      countrySvg = wales();
+      break;
+    case "Senegal":
+      countrySvg = senegal();
+      break;
+    case "Norway":
+      countrySvg = norway();
+      break;
+    case "Egypt":
+      countrySvg = egypt();
+      break;
+    case "England":
+      countrySvg = england();
+      break;
   }
 
   return countrySvg;

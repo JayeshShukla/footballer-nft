@@ -1,0 +1,2 @@
+export const belgium = () =>
+  `<svg width="30" height="30" x="60" y="3" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="iconify iconify--twemoji"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path fill="#141414" d="M4 5a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h8V5H4z"/><path fill="#FEE833" d="M12 5h12v26H12z"/><path fill="#EE232C" d="M32 5h-8v26h8a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4z"/></svg>`;

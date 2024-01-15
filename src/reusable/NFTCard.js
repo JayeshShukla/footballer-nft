@@ -12,6 +12,7 @@ export const NFTCard = ({
   setToastNumber,
   publicAddress,
   toastNumber,
+  addressToFetch,
 }) => {
   const tiltRef = useRef();
   const [cardLoader, setCardLoader] = useState(false);
@@ -112,14 +113,13 @@ export const NFTCard = ({
   };
 
   return (
-    <>
+    <div className={`${styles.cardDimension}`}>
       {upgrade ? (
         <div className={`${styles.editCard}`}>
           {cardLoader ? (
             <ReusableLoader cardLoader={cardLoader} />
           ) : (
             <>
-              {" "}
               <div className="flex items-center mb1">
                 <div className={`w-30 ${styles.attributeName}`}>PAC :</div>
                 <div className="w-70">
@@ -219,12 +219,14 @@ export const NFTCard = ({
               <div className={styles.content}>
                 <h2>{i + 1}</h2>
                 <h3>{`Level : ${currentLevel}`}</h3>
-                <a onClick={() => setUpgrade(true)}>Upgrade</a>
+                {addressToFetch.toLowerCase() !== publicAddress ? null : (
+                  <a onClick={() => setUpgrade(true)}>Upgrade</a>
+                )}
               </div>
             </>
           )}
         </div>
       )}
-    </>
+    </div>
   );
 };
